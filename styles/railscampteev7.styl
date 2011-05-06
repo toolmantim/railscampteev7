@@ -1,0 +1,25 @@
+@import "reset"
+
+pos(left, right)
+  '%s %s' % left right
+
+star-gradient(left, right, opacity)
+  '-webkit-gradient(radial, %s, 1, %s, 10, from(rgba(255,255,255,%s)), color-stop(.1, transparent), to(transparent))' % (pos(left, right) pos(left, right) opacity)
+
+stars()
+  str = ''
+  for i in 1 2 3 4 5
+    str += star-gradient(unit(i * 10, '%'), unit(i * 10, '%'), 1/i)
+    str += ', ' if i != 5
+  unquote(str)
+
+html, body
+  height 100%
+
+html
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763)) no-repeat
+
+body
+  background: stars()
+  -webkit-background-size: 150px 150px
+  -webkit-transform: scale(1)
