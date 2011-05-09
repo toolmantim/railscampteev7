@@ -4,7 +4,7 @@ watch = false
 
 desc "Compile CSS"
 task :compile do
-  exec "stylus --compress #{'--watch' if watch} -o public/css styles/railscampteev7.styl"
+  exec "stylus #{'--watch' if watch} -o public/css styles/railscampteev7.styl"
 end
 
 desc "Watch & compile CSS"

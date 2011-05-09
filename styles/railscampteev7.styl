@@ -1,25 +1,166 @@
 @import "reset"
+@import "fonts"
+
+$intro-duration = 60
+
+time(percent)
+  '%ss' % ($intro-duration * percent)
 
 pos(left, right)
   '%s %s' % left right
 
-star-gradient(left, right, opacity)
-  '-webkit-gradient(radial, %s, 1, %s, 10, from(rgba(255,255,255,%s)), color-stop(.1, transparent), to(transparent))' % (pos(left, right) pos(left, right) opacity)
-
-stars()
-  str = ''
-  for i in 1 2 3 4 5
-    str += star-gradient(unit(i * 10, '%'), unit(i * 10, '%'), 1/i)
-    str += ', ' if i != 5
-  unquote(str)
+star(left, right, size, opacity)
+  '-webkit-gradient(radial, %s, %s, %s, %s, from(rgba(255,255,255,%s)), color-stop(.1, transparent), to(transparent))' % (pos(left, right) (size - 1) pos(left, right) size opacity)
 
 html, body
   height 100%
 
 html
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763)) no-repeat
+  background -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763)) no-repeat
 
 body
-  background: stars()
-  -webkit-background-size: 150px 150px
-  -webkit-transform: scale(1)
+  overflow hidden
+  -webkit-animation boom 50ms time(1) linear infinite alternate
+
+.scene
+  position absolute
+  top 0
+  left 0
+  background star(250,250,4,.4), star(180,180,3,.2), star(10,60,2,.1), star(10,20,3,.1), star(75,15,2,.2), star(125,160,5,.02), star(125,60,4,.2), star(10,180,3,.2)
+  background-position 0 0
+  width 200%
+  height 200%
+  -webkit-background-size 290px 230px
+  -webkit-animation zoomie time(1) 1 forwards
+  z-index 1
+  &:before
+    background star(300,10,2,.3), star(120,230,2,.1), star(85,120,3,.4), star(195,30,3,.4)
+    -webkit-background-size 410px 190px
+    background-position 10px 90px
+    height 100%
+    width 100%
+    content ' '
+    display block
+  &:after
+    background star(150,90,2,.3), star(89,97,2,.2), star(25,110,3,.4), star(195,30,3,.4)
+    -webkit-background-size 190px 130px
+    background-position 30px 10px
+    height 100%
+    width 100%
+    content ' '
+    display block
+    position absolute
+    top 0
+    left 0
+
+.ground
+  width 100%
+  height 200px
+  background-color green
+  position absolute
+  bottom 0
+  z-index 4
+  
+.words
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  font-size 48px
+  text-align center
+  color white
+  z-index 2
+  font 72px $strangelove
+  > *
+    position absolute
+  .us
+    top 40%
+    left 35%
+    opacity 0
+    -webkit-animation sponsor time(1) 1 linear forwards
+    -webkit-transform rotate(2deg)
+    font-size 90px
+  .sponsor
+    top 40%
+    left 40%
+    opacity 0
+    -webkit-animation us time(1) 1 linear forwards
+    -webkit-transform rotate(4deg)
+  .title
+    top 35%
+    left 22%
+    opacity 0
+    -webkit-animation title time(1) 1 linear forwards
+    font 180px $killerelephant
+    em
+      font normal 130px $strangelove
+      margin-right -0.2em
+      position relative
+      top -0.28em
+    
+.comet-outer
+  position absolute
+  width 100%
+  height 100%
+  z-index 3
+  -webkit-transform translateY(150%) translateX(-80%)
+  -webkit-animation comet time(.015) time(.65) 1 ease-in
+  .comet
+    width 174px
+    height 184px
+    background transparent url('/images/comet.png') no-repeat
+    position absolute
+    bottom 100%
+    left 80%
+    z-index 3
+
+@keyframes zoomie
+  from
+    -webkit-transform translateZ(0) translateX(-25%) translateY(-25%) scale(1) rotate(-10deg)
+  to
+    -webkit-transform translateZ(0) translateX(-25%) translateY(-25%) scale(.5) rotate(0)
+    
+@keyframes us
+  0%
+    opacity 0
+  11%
+    opacity 0
+  12%
+    opacity 1
+  18%
+    opacity 1
+  20%
+    opacity 0
+  100%
+    opacity 0
+
+@keyframes sponsor
+  0%
+    opacity 0
+  25%
+    opacity 0
+  26%
+    opacity 1
+  36%
+    opacity 1
+  38%
+    opacity 0
+  100%
+    opacity 0
+
+@keyframes title
+  0%
+    opacity 0
+  55%
+    opacity 0
+  56%
+    opacity 1
+  100%
+    opacity 1
+
+@keyframes comet
+  from
+    -webkit-transform translateY(0) translateX(0)
+  to
+    -webkit-transform translateY(150%) translateX(-80%)

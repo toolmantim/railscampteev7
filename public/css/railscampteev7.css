@@ -1,10 +1,329 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
-body{line-height:1}
-ol,ul{list-style:none}
-blockquote,q{quotes:none}
-blockquote:before,blockquote:after,q:before,q:after{content:none}
-table{border-collapse:collapse;border-spacing:0}
-html,body{height:100%}
-html{background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#00162f),color-stop(1,#004763)) no-repeat}
-body{background:-webkit-gradient(radial, 10% 10%, 1, 10% 10%, 10, from(rgba(255,255,255,1)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 20% 20%, 1, 20% 20%, 10, from(rgba(255,255,255,0.5)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 30% 30%, 1, 30% 30%, 10, from(rgba(255,255,255,0.3333333333333333)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 40% 40%, 1, 40% 40%, 10, from(rgba(255,255,255,0.25)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 50% 50%, 1, 50% 50%, 10, from(rgba(255,255,255,0.2)), color-stop(.1, transparent), to(transparent));-webkit-background-size:150px 150px;-webkit-transform:scale(1)}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+@font-face {
+  font-family: "StrangeloveText";
+  src: url("/fonts/eot/1626c9487abafddb5c3d190117a8b518.eot");
+  src: url("/fonts/eot/1626c9487abafddb5c3d190117a8b518.eot?#iefix") format("embedded-opentype"), url("/fonts/woff/1626c9487abafddb5c3d190117a8b518.woff") format("woff"), url("/fonts/ttf/1626c9487abafddb5c3d190117a8b518.ttf") format("truetype"), url("/fonts/svg/1626c9487abafddb5c3d190117a8b518.svg#StrangeloveText") format("svg");
+}
+@font-face {
+  font-family: "KILLERELEPHANT";
+  src: url("/fonts/eot/50493f78985b1f34bb991014e72588b3.eot");
+  src: url("/fonts/eot/50493f78985b1f34bb991014e72588b3.eot?#iefix") format("embedded-opentype"), url("/fonts/woff/50493f78985b1f34bb991014e72588b3.woff") format("woff"), url("/fonts/ttf/50493f78985b1f34bb991014e72588b3.ttf") format("truetype"), url("/fonts/svg/50493f78985b1f34bb991014e72588b3.svg#KILLERELEPHANT") format("svg");
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763)) no-repeat;
+}
+body {
+  overflow: hidden;
+  -webkit-animation: boom 50ms 60s linear infinite alternate;
+}
+.scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(radial, 250 250, 3, 250 250, 4, from(rgba(255,255,255,0.4)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 180 180, 2, 180 180, 3, from(rgba(255,255,255,0.2)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 10 60, 1, 10 60, 2, from(rgba(255,255,255,0.1)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 10 20, 2, 10 20, 3, from(rgba(255,255,255,0.1)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 75 15, 1, 75 15, 2, from(rgba(255,255,255,0.2)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 125 160, 4, 125 160, 5, from(rgba(255,255,255,0.02)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 125 60, 3, 125 60, 4, from(rgba(255,255,255,0.2)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 10 180, 2, 10 180, 3, from(rgba(255,255,255,0.2)), color-stop(.1, transparent), to(transparent));
+  background-position: 0 0;
+  width: 200%;
+  height: 200%;
+  -webkit-background-size: 290px 230px;
+  -webkit-animation: zoomie 60s 1 forwards;
+  z-index: 1;
+}
+.scene:before {
+  background: -webkit-gradient(radial, 300 10, 1, 300 10, 2, from(rgba(255,255,255,0.3)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 120 230, 1, 120 230, 2, from(rgba(255,255,255,0.1)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 85 120, 2, 85 120, 3, from(rgba(255,255,255,0.4)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 195 30, 2, 195 30, 3, from(rgba(255,255,255,0.4)), color-stop(.1, transparent), to(transparent));
+  -webkit-background-size: 410px 190px;
+  background-position: 10px 90px;
+  height: 100%;
+  width: 100%;
+  content: " ";
+  display: block;
+}
+.scene:after {
+  background: -webkit-gradient(radial, 150 90, 1, 150 90, 2, from(rgba(255,255,255,0.3)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 89 97, 1, 89 97, 2, from(rgba(255,255,255,0.2)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 25 110, 2, 25 110, 3, from(rgba(255,255,255,0.4)), color-stop(.1, transparent), to(transparent)), -webkit-gradient(radial, 195 30, 2, 195 30, 3, from(rgba(255,255,255,0.4)), color-stop(.1, transparent), to(transparent));
+  -webkit-background-size: 190px 130px;
+  background-position: 30px 10px;
+  height: 100%;
+  width: 100%;
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ground {
+  width: 100%;
+  height: 200px;
+  background-color: #008000;
+  position: absolute;
+  bottom: 0;
+  z-index: 4;
+}
+.words {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 48px;
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  font: 72px "StrangeloveText";
+}
+.words > * {
+  position: absolute;
+}
+.words .us {
+  top: 40%;
+  left: 35%;
+  opacity: 0;
+  -webkit-animation: sponsor 60s 1 linear forwards;
+  -webkit-transform: rotate(2deg);
+  font-size: 90px;
+}
+.words .sponsor {
+  top: 40%;
+  left: 40%;
+  opacity: 0;
+  -webkit-animation: us 60s 1 linear forwards;
+  -webkit-transform: rotate(4deg);
+}
+.words .title {
+  top: 35%;
+  left: 22%;
+  opacity: 0;
+  -webkit-animation: title 60s 1 linear forwards;
+  font: 180px "KILLERELEPHANT";
+}
+.words .title em {
+  font: normal 130px "StrangeloveText";
+  margin-right: -0.2em;
+  position: relative;
+  top: -0.28em;
+}
+.comet-outer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  -webkit-transform: translateY(150%) translateX(-80%);
+  -webkit-animation: comet 0.8999999999999999s 39s 1 ease-in;
+}
+.comet-outer .comet {
+  width: 174px;
+  height: 184px;
+  background: transparent url("/images/comet.png") no-repeat;
+  position: absolute;
+  bottom: 100%;
+  left: 80%;
+  z-index: 3;
+}
+@-webkit-keyframes zoomie {
+  0% {
+    -webkit-transform: translateZ(0) translateX(-25%) translateY(-25%) scale(1) rotate(-10deg);
+  }
+
+  100% {
+    -webkit-transform: translateZ(0) translateX(-25%) translateY(-25%) scale(0.5) rotate(0);
+  }
+}
+@-webkit-keyframes us {
+  0% {
+    opacity: 0;
+  }
+
+  11% {
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  18% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes sponsor {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  26% {
+    opacity: 1;
+  }
+
+  36% {
+    opacity: 1;
+  }
+
+  38% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes title {
+  0% {
+    opacity: 0;
+  }
+
+  55% {
+    opacity: 0;
+  }
+
+  56% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes comet {
+  0% {
+    -webkit-transform: translateY(0) translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(150%) translateX(-80%);
+  }
+}
