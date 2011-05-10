@@ -1,16 +1,10 @@
 @import "reset"
 @import "fonts"
 
-$intro-duration = 60
+$intro-duration = 10
 
 time(percent)
   '%ss' % ($intro-duration * percent)
-
-pos(left, right)
-  '%s %s' % left right
-
-star(left, right, size, opacity)
-  '-webkit-gradient(radial, %s, %s, %s, %s, from(rgba(255,255,255,%s)), color-stop(.1, transparent), to(transparent))' % (pos(left, right) (size - 1) pos(left, right) size opacity)
 
 html, body
   height 100%
@@ -25,25 +19,22 @@ body
   position absolute
   top 0
   left 0
-  background star(250,250,4,.4), star(180,180,3,.2), star(10,60,2,.1), star(10,20,3,.1), star(75,15,2,.2), star(125,160,5,.02), star(125,60,4,.2), star(10,180,3,.2)
-  background-position 0 0
+  background-image url('/images/sky1.png')
+  background-position 1% 0
   width 200%
   height 200%
-  -webkit-background-size 290px 230px
-  /*  -webkit-animation zoomie time(1) 1 forwards*/
+  -webkit-animation zoomie time(.6) 1 linear forwards
   z-index 1
   &:before
-    background star(300,10,2,.3), star(120,230,2,.1), star(85,120,3,.4), star(195,30,3,.4)
-    -webkit-background-size 410px 190px
-    background-position 10px 90px
+    background-image url('/images/sky2.png')
+    background-position 1% 0
     height 100%
     width 100%
     content ' '
     display block
   &:after
-    background star(150,90,2,.3), star(89,97,2,.2), star(25,110,3,.4), star(195,30,3,.4)
-    -webkit-background-size 190px 130px
-    background-position 30px 10px
+    background-image url('/images/sky3.png')
+    background-position 1.4% 0
     height 100%
     width 100%
     content ' '
@@ -51,10 +42,18 @@ body
     position absolute
     top 0
     left 0
+  .scene-inner
+    background-image url('/images/sky4.png')
+    background-position 1.4% 0
+    height 100%
+    width 100%
+    position absolute
+    top 0
+    left 0a
 
 .ground
   width 100%
-  height 200px
+  height 150px
   background-color green
   position absolute
   bottom 0
@@ -66,34 +65,35 @@ body
   left 0
   width 100%
   height 100%
-  font-size 48px
-  text-align center
   color white
-  z-index 4
-  font 72px $strangelove
+  font-family $strangelove
   > *
+    display block
     position absolute
+    text-align center
+    top 45%
+    left 0
+    height 100%
+    width 100%
+    z-index 4
+  .sponsor
+    opacity 0
+    -webkit-animation us time(1) 1 linear forwards
+    -webkit-transform rotate(4deg)
+    font-size 110px
   .us
-    top 40%
-    left 35%
     opacity 0
     -webkit-animation sponsor time(1) 1 linear forwards
     -webkit-transform rotate(2deg)
     font-size 90px
-  .sponsor
-    top 40%
-    left 40%
-    opacity 0
-    -webkit-animation us time(1) 1 linear forwards
-    -webkit-transform rotate(4deg)
+    font-size 120px
   .title
     top 35%
-    left 22%
     opacity 0
     -webkit-animation title time(1) 1 linear forwards
-    font 180px $killerelephant
+    font 220px $killerelephant
     em
-      font normal 130px $strangelove
+      font normal 160px $strangelove
       margin-right -0.2em
       position relative
       top -0.28em
