@@ -1,7 +1,7 @@
 @import "reset"
 @import "fonts"
 
-$intro-duration = 10
+$intro-duration = 60
 
 time(percent)
   '%ss' % ($intro-duration * percent)
@@ -23,7 +23,7 @@ body
   background-position 1% 0
   width 200%
   height 200%
-  -webkit-animation zoomie time(.65) 1 linear forwards
+  -webkit-animation zoomie time(.67) 1 ease-out forwards
   z-index 1
   &:before
     background-image url('/images/sky2.png')
@@ -32,6 +32,7 @@ body
     width 100%
     content ' '
     display block
+    opacity .8
   &:after
     background-image url('/images/sky3.png')
     background-position 1.4% 0
@@ -42,6 +43,7 @@ body
     position absolute
     top 0
     left 0
+    opacity .5
   .scene-inner
     background-image url('/images/sky4.png')
     background-position 1.4% 0
@@ -59,6 +61,15 @@ body
   bottom 0
   z-index 4
   
+  .dinos
+    width 510px
+    height 325px
+    background transparent url('/images/dinos.png') no-repeat
+    position absolute
+    left 5%
+    bottom 50px
+    -webkit-animation jumping 300ms infinite
+  
 .words
   position absolute
   top 0
@@ -72,18 +83,18 @@ body
     position absolute
     text-align center
     top 45%
-    left 0
+    left -1%
     height 100%
     width 100%
     z-index 4
   .sponsor
     opacity 0
-    -webkit-animation us time(1) 1 linear forwards
-    -webkit-transform rotate(4deg)
+    -webkit-animation sponsor time(1) 1 linear forwards
+    -webkit-transform rotate(2deg)
     font-size 110px
   .us
     opacity 0
-    -webkit-animation sponsor time(1) 1 linear forwards
+    -webkit-animation us time(1) 1 linear forwards
     -webkit-transform rotate(2deg)
     font-size 90px
     font-size 120px
@@ -124,30 +135,30 @@ body
   to
     -webkit-transform translateZ(0) translateX(-25%) translateY(-25%) scale(.5) rotate(0)
     
-@keyframes us
+@keyframes sponsor
   0%
     opacity 0
-  11%
+  1%
     opacity 0
-  12%
+  5%
     opacity 1
-  18%
+  8%
     opacity 1
-  20%
+  9%
     opacity 0
   100%
     opacity 0
 
-@keyframes sponsor
+@keyframes us
   0%
     opacity 0
-  25%
+  12%
     opacity 0
-  26%
+  16%
     opacity 1
-  36%
+  19%
     opacity 1
-  38%
+  20%
     opacity 0
   100%
     opacity 0
@@ -155,12 +166,22 @@ body
 @keyframes title
   0%
     opacity 0
-  55%
+  30%
     opacity 0
-  56%
+  31%
     opacity 1
   100%
     opacity 1
+
+@keyframes jumping
+  0%
+    -webkit-transform translateY(0)
+    -webkit-animation-timing-function ease-in
+  50%
+    -webkit-transform translateY(20px)
+    -webkit-animation-timing-function ease-out
+  100%
+    -webkit-transform translateY(0)
 
 @keyframes comet
   from

@@ -148,7 +148,7 @@ body {
   background-position: 1% 0;
   width: 200%;
   height: 200%;
-  -webkit-animation: zoomie 6.5s 1 linear forwards;
+  -webkit-animation: zoomie 40.2s 1 ease-out forwards;
   z-index: 1;
 }
 .scene:before {
@@ -158,6 +158,7 @@ body {
   width: 100%;
   content: " ";
   display: block;
+  opacity: 0.8;
 }
 .scene:after {
   background-image: url("/images/sky3.png");
@@ -169,6 +170,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0.5;
 }
 .scene .scene-inner {
   background-image: url("/images/sky4.png");
@@ -187,6 +189,15 @@ body {
   bottom: 0;
   z-index: 4;
 }
+.ground .dinos {
+  width: 510px;
+  height: 325px;
+  background: transparent url("/images/dinos.png") no-repeat;
+  position: absolute;
+  left: 5%;
+  bottom: 50px;
+  -webkit-animation: jumping 300ms infinite;
+}
 .words {
   position: absolute;
   top: 0;
@@ -201,20 +212,20 @@ body {
   position: absolute;
   text-align: center;
   top: 45%;
-  left: 0;
+  left: -1%;
   height: 100%;
   width: 100%;
   z-index: 4;
 }
 .words .sponsor {
   opacity: 0;
-  -webkit-animation: us 10s 1 linear forwards;
-  -webkit-transform: rotate(4deg);
+  -webkit-animation: sponsor 60s 1 linear forwards;
+  -webkit-transform: rotate(2deg);
   font-size: 110px;
 }
 .words .us {
   opacity: 0;
-  -webkit-animation: sponsor 10s 1 linear forwards;
+  -webkit-animation: us 60s 1 linear forwards;
   -webkit-transform: rotate(2deg);
   font-size: 90px;
   font-size: 120px;
@@ -222,7 +233,7 @@ body {
 .words .title {
   top: 35%;
   opacity: 0;
-  -webkit-animation: title 10s 1 linear forwards;
+  -webkit-animation: title 60s 1 linear forwards;
   font: 220px "KILLERELEPHANT";
 }
 .words .title em {
@@ -243,7 +254,7 @@ body {
   height: 100%;
   z-index: 3;
   -webkit-transform: translateY(150%) translateX(-80%);
-  -webkit-animation: comet 0.15s 6.5s 1 ease-in;
+  -webkit-animation: comet 0.8999999999999999s 39s 1 ease-in;
 }
 .comet-outer .comet {
   width: 174px;
@@ -263,24 +274,24 @@ body {
     -webkit-transform: translateZ(0) translateX(-25%) translateY(-25%) scale(0.5) rotate(0);
   }
 }
-@-webkit-keyframes us {
+@-webkit-keyframes sponsor {
   0% {
     opacity: 0;
   }
 
-  11% {
+  1% {
     opacity: 0;
   }
 
-  12% {
+  5% {
     opacity: 1;
   }
 
-  18% {
+  8% {
     opacity: 1;
   }
 
-  20% {
+  9% {
     opacity: 0;
   }
 
@@ -288,24 +299,24 @@ body {
     opacity: 0;
   }
 }
-@-webkit-keyframes sponsor {
+@-webkit-keyframes us {
   0% {
     opacity: 0;
   }
 
-  25% {
+  12% {
     opacity: 0;
   }
 
-  26% {
+  16% {
     opacity: 1;
   }
 
-  36% {
+  19% {
     opacity: 1;
   }
 
-  38% {
+  20% {
     opacity: 0;
   }
 
@@ -318,16 +329,31 @@ body {
     opacity: 0;
   }
 
-  55% {
+  30% {
     opacity: 0;
   }
 
-  56% {
+  31% {
     opacity: 1;
   }
 
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes jumping {
+  0% {
+    -webkit-transform: translateY(0);
+    -webkit-animation-timing-function: ease-in;
+  }
+
+  50% {
+    -webkit-transform: translateY(20px);
+    -webkit-animation-timing-function: ease-out;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
   }
 }
 @-webkit-keyframes comet {
