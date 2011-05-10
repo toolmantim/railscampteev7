@@ -20,7 +20,6 @@ html
 
 body
   overflow hidden
-  -webkit-animation boom 50ms time(1) linear infinite alternate
 
 .scene
   position absolute
@@ -31,7 +30,7 @@ body
   width 200%
   height 200%
   -webkit-background-size 290px 230px
-  -webkit-animation zoomie time(1) 1 forwards
+  /*  -webkit-animation zoomie time(1) 1 forwards*/
   z-index 1
   &:before
     background star(300,10,2,.3), star(120,230,2,.1), star(85,120,3,.4), star(195,30,3,.4)
@@ -70,7 +69,7 @@ body
   font-size 48px
   text-align center
   color white
-  z-index 2
+  z-index 4
   font 72px $strangelove
   > *
     position absolute

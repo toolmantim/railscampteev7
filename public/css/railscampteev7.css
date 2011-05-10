@@ -139,7 +139,6 @@ html {
 }
 body {
   overflow: hidden;
-  -webkit-animation: boom 50ms 60s linear infinite alternate;
 }
 .scene {
   position: absolute;
@@ -150,7 +149,6 @@ body {
   width: 200%;
   height: 200%;
   -webkit-background-size: 290px 230px;
-  -webkit-animation: zoomie 60s 1 forwards;
   z-index: 1;
 }
 .scene:before {
@@ -191,7 +189,7 @@ body {
   font-size: 48px;
   text-align: center;
   color: #fff;
-  z-index: 2;
+  z-index: 4;
   font: 72px "StrangeloveText";
 }
 .words > * {
