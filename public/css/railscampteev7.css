@@ -148,7 +148,7 @@ body {
   background-position: 1% 0;
   width: 200%;
   height: 200%;
-  -webkit-animation: zoomie 6s 1 linear forwards;
+  -webkit-animation: zoomie 6.5s 1 linear forwards;
   z-index: 1;
 }
 .scene:before {
@@ -230,6 +230,12 @@ body {
   margin-right: -0.2em;
   position: relative;
   top: -0.28em;
+}
+.words .title .a {
+  letter-spacing: 10px;
+}
+.words .title .l {
+  letter-spacing: -30px;
 }
 .comet-outer {
   position: absolute;
