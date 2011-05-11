@@ -130,75 +130,61 @@ table {
   src: url("/fonts/eot/50493f78985b1f34bb991014e72588b3.eot");
   src: url("/fonts/eot/50493f78985b1f34bb991014e72588b3.eot?#iefix") format("embedded-opentype"), url("/fonts/woff/50493f78985b1f34bb991014e72588b3.woff") format("woff"), url("/fonts/ttf/50493f78985b1f34bb991014e72588b3.ttf") format("truetype"), url("/fonts/svg/50493f78985b1f34bb991014e72588b3.svg#KILLERELEPHANT") format("svg");
 }
-html,
-body {
-  height: 100%;
-}
-html {
+.intro {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763)) no-repeat;
-}
-body {
-  overflow: hidden;
-}
-.scene {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("/images/sky1.png");
-  background-position: 1% 0;
   width: 200%;
   height: 200%;
-  -webkit-animation: zoomie 40.2s 1 linear forwards;
-  z-index: 1;
+  -webkit-animation: zoomie 20.1s 1 linear forwards, fade-out 500ms 20.1s 1 linear forwards;
 }
-.scene:before {
-  background-image: url("/images/sky2.png");
-  background-position: 1% 0;
-  height: 100%;
-  width: 100%;
-  content: " ";
-  display: block;
-  opacity: 0.8;
-}
-.scene:after {
-  background-image: url("/images/sky3.png");
-  background-position: 1.4% 0;
-  height: 100%;
-  width: 100%;
-  content: " ";
-  display: block;
+.intro .stars-1,
+.intro .stars-2,
+.intro .stars-3,
+.intro .stars-4 {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.5;
-}
-.scene .scene-inner {
-  background-image: url("/images/sky4.png");
-  background-position: 1.4% 0;
   height: 100%;
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0 a;
+  z-index: 1;
 }
-.ground {
+.intro .stars-1 {
+  background-image: url("/images/sky1.png");
+  background-position: 90px 0;
+}
+.intro .stars-2 {
+  background-image: url("/images/sky2.png");
+  background-position: 50px 0;
+}
+.intro .stars-3 {
+  background-image: url("/images/sky3.png");
+  background-position: 40px 0;
+  opacity: 0.3;
+}
+.intro .stars-4 {
+  background-image: url("/images/sky4.png");
+  background-position: 0 0;
+}
+.intro .ground {
   width: 100%;
   height: 150px;
   background-color: #008000;
   position: absolute;
   bottom: 0;
-  z-index: 4;
+  z-index: 2;
 }
-.ground .dinos {
+.intro .ground .dinos {
   width: 510px;
   height: 325px;
   background: transparent url("/images/dinos.png") no-repeat;
   position: absolute;
   left: 5%;
   bottom: 50px;
-  -webkit-animation: jumping 300ms infinite;
+  z-index: 3;
 }
-.words {
+.intro .words {
   position: absolute;
   top: 0;
   left: 0;
@@ -207,7 +193,7 @@ body {
   color: #fff;
   font-family: "StrangeloveText";
 }
-.words > * {
+.intro .words > * {
   display: block;
   position: absolute;
   text-align: center;
@@ -215,72 +201,98 @@ body {
   left: -1%;
   height: 100%;
   width: 100%;
-  z-index: 4;
+  z-index: 5;
 }
-.words .sponsor {
+.intro .words .sponsor {
   opacity: 0;
-  -webkit-animation: sponsor 60s 1 linear forwards;
+  -webkit-animation: sponsor 30s 1 linear forwards;
   -webkit-transform: rotate(2deg);
   font-size: 110px;
 }
-.words .us {
+.intro .words .us {
   opacity: 0;
-  -webkit-animation: us 60s 1 linear forwards;
+  -webkit-animation: us 30s 1 linear forwards;
   -webkit-transform: rotate(2deg);
   font-size: 90px;
   font-size: 120px;
 }
-.words .title {
+.intro .words .title {
   top: 35%;
   opacity: 0;
-  -webkit-animation: title 60s 1 linear forwards;
+  -webkit-animation: title 30s 1 linear forwards;
   font: 220px "KILLERELEPHANT";
 }
-.words .title em {
+.intro .words .title em {
   font: normal 160px "StrangeloveText";
   margin-right: -0.2em;
   position: relative;
   top: -0.28em;
 }
-.words .title .a {
+.intro .words .title .a {
   letter-spacing: 10px;
 }
-.words .title .l {
+.intro .words .title .l {
   letter-spacing: -30px;
 }
-.comet-outer {
+.intro .comet-outer {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 3;
-  -webkit-transform: translateY(150%) translateX(-80%);
-  -webkit-animation: comet 0.6s 39s 1 linear;
+  -webkit-animation: comet 30s 1 linear forwards;
 }
-.comet-outer .comet {
+.intro .comet-outer .comet {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 174px;
   height: 184px;
+  z-index: 4;
+  -webkit-transform: scale(1.5);
   background: transparent url("/images/comet.png") no-repeat;
-  position: absolute;
-  bottom: 100%;
-  left: 80%;
-  z-index: 3;
 }
-.boom {
+.intro .boom {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 5;
+  z-index: 6;
   background-color: #fff;
-  -webkit-animation: boom 0.18s 39.6s 1 linear forwards;
+  -webkit-animation: fade-in 250ms 19.2s linear forwards;
   opacity: 0;
 }
-@-webkit-keyframes zoomie {
+@-webkit-keyframes fade-in {
   0% {
-    -webkit-transform: translateZ(0) translateX(-25%) translateY(-25%) scale(1) rotate(-13deg);
+    opacity: 0;
   }
 
   100% {
-    -webkit-transform: translateZ(0) translateX(-25%) translateY(-25%) scale(0.5) rotate(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes zoomie {
+  0% {
+    -webkit-transform: translate3d(-25%, -25%, 0) scale(1) rotate(-13deg);
+  }
+
+  100% {
+    -webkit-transform: translate3d(-25%, -25%, 0) scale(0.5) rotate(0);
+  }
+}
+@-webkit-keyframes stars {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
   }
 }
 @-webkit-keyframes sponsor {
@@ -338,36 +350,12 @@ body {
     opacity: 0;
   }
 
-  50% {
+  45% {
     opacity: 0;
   }
 
-  52% {
+  48% {
     opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes jumping {
-  0% {
-    -webkit-transform: translateY(0);
-    -webkit-animation-timing-function: ease-in;
-  }
-
-  50% {
-    -webkit-transform: translateY(20px);
-    -webkit-animation-timing-function: ease-out;
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
-  }
-}
-@-webkit-keyframes boom {
-  0% {
-    opacity: 0;
   }
 
   100% {
@@ -376,10 +364,28 @@ body {
 }
 @-webkit-keyframes comet {
   0% {
-    -webkit-transform: translateY(0) translateX(0);
+    -webkit-transform: translate3d(90%, -30%, 0);
+  }
+
+  60% {
+    -webkit-transform: translate3d(90%, -30%, 0);
+  }
+
+  62% {
+    -webkit-transform: translate3d(20%, 110%, 0);
   }
 
   100% {
-    -webkit-transform: translateY(150%) translateX(-80%);
+    -webkit-transform: translate3d(20%, 110%, 0);
   }
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763)) no-repeat;
+}
+body {
+  overflow: hidden;
 }

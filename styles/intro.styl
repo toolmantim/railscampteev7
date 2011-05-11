@@ -1,0 +1,186 @@
+time(percent)
+  '%ss' % ($intro-duration * percent)
+
+.intro
+  background -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763)) no-repeat
+  position absolute
+  top 0
+  left 0
+  width 200%
+  height 200%
+  -webkit-animation zoomie time(.67) 1 linear forwards, fade-out 500ms time(.67) 1 linear forwards
+  .stars-1, .stars-2, .stars-3, .stars-4
+    position absolute
+    top 0
+    left 0
+    height 100%
+    width 100%
+    z-index 1
+  .stars-1
+    background-image url('/images/sky1.png')
+    background-position 90px 0
+  .stars-2
+    background-image url('/images/sky2.png')
+    background-position 50px 0
+  .stars-3
+    background-image url('/images/sky3.png')
+    background-position 40px 0
+    opacity .3
+  .stars-4
+    background-image url('/images/sky4.png')
+    background-position 0 0
+
+  .ground
+    width 100%
+    height 150px
+    background-color green
+    position absolute
+    bottom 0
+    z-index 2
+    .dinos
+      width 510px
+      height 325px
+      background transparent url('/images/dinos.png') no-repeat
+      position absolute
+      left 5%
+      bottom 50px
+      z-index 3
+
+  .words
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    color white
+    font-family $strangelove
+    > *
+      display block
+      position absolute
+      text-align center
+      top 45%
+      left -1%
+      height 100%
+      width 100%
+      z-index 5
+    .sponsor
+      opacity 0
+      -webkit-animation sponsor time(1) 1 linear forwards
+      -webkit-transform rotate(2deg)
+      font-size 110px
+    .us
+      opacity 0
+      -webkit-animation us time(1) 1 linear forwards
+      -webkit-transform rotate(2deg)
+      font-size 90px
+      font-size 120px
+    .title
+      top 35%
+      opacity 0
+      -webkit-animation title time(1) 1 linear forwards
+      font 220px $killerelephant
+      em
+        font normal 160px $strangelove
+        margin-right -0.2em
+        position relative
+        top -0.28em
+      .a
+        letter-spacing 10px
+      .l
+        letter-spacing -30px
+
+  .comet-outer
+    position absolute
+    width 100%
+    height 100%
+    -webkit-animation comet time(1) 1 linear forwards
+    .comet
+      position absolute
+      top 0
+      left 0
+      width 174px
+      height 184px
+      z-index 4
+      -webkit-transform scale(1.5)
+      background transparent url('/images/comet.png') no-repeat
+
+  .boom
+    position absolute
+    width 100%
+    height 100%
+    z-index 6
+    background-color white
+    -webkit-animation fade-in 250ms time(.64) linear forwards
+    opacity 0
+
+@keyframes fade-in
+  from
+    opacity 0
+  to
+    opacity 1
+
+@keyframes fade-out
+  from
+    opacity 1
+  to
+    opacity 0
+
+@keyframes zoomie
+  from
+    -webkit-transform translate3d(-25%, -25%, 0) scale(1) rotate(-13deg)
+  to
+    -webkit-transform translate3d(-25%, -25%, 0) scale(.5) rotate(0)
+
+@keyframes stars
+  from
+    opacity 1
+  to
+    opacity .5
+
+@keyframes sponsor
+  0%
+    opacity 0
+  1%
+    opacity 0
+  5%
+    opacity 1
+  13%
+    opacity 1
+  14%
+    opacity 0
+  100%
+    opacity 0
+
+@keyframes us
+  0%
+    opacity 0
+  17%
+    opacity 0
+  21%
+    opacity 1
+  29%
+    opacity 1
+  34%
+    opacity 0
+  100%
+    opacity 0
+
+@keyframes title
+  0%
+    opacity 0
+  45%
+    opacity 0
+  48%
+    opacity 1
+  100%
+    opacity 1
+
+@keyframes comet
+  0%
+    -webkit-transform translate3d(90%, -30%, 0)
+  60%
+    -webkit-transform translate3d(90%, -30%, 0)
+  62%
+    -webkit-transform translate3d(20%, 110%, 0)
+  100%
+    -webkit-transform translate3d(20%, 110%, 0)
