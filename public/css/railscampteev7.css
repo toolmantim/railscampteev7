@@ -221,12 +221,6 @@ table {
   -webkit-animation: title 30s 1 linear forwards;
   font: 220px "KILLERELEPHANT";
 }
-.intro .words .title em {
-  font: normal 160px "StrangeloveText";
-  margin-right: -0.2em;
-  position: relative;
-  top: -0.28em;
-}
 .intro .words .title .a {
   letter-spacing: 10px;
 }
@@ -390,26 +384,4 @@ body {
 }
 body {
   overflow: hidden;
-}
-.intro {
-  display: none;
-}
-.order .tee {
-  margin: 150px auto 0 auto;
-  width: 393px;
-  height: 417px;
-  background: transparent url("/images/tee.png");
-  position: relative;
-  cursor: pointer;
-}
-.order .tee .inner {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: transparent url("/images/tee.png") 0 -417px;
-  opacity: 0.05;
-  -webkit-transition: opacity 200ms;
-}
-.order .tee .inner:hover {
-  opacity: 0.15;
 }
