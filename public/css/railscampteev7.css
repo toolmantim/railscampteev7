@@ -137,7 +137,7 @@ table {
   left: 0;
   width: 200%;
   height: 200%;
-  -webkit-animation: zoomie 20.1s 1 linear forwards, fade-out 500ms 20.1s 1 linear forwards;
+  -webkit-animation: zoomie 20.1s 1 linear forwards, fade-out 5s 20.130000000000003s 1 linear forwards;
 }
 .intro .stars-1,
 .intro .stars-2,
@@ -161,7 +161,6 @@ table {
 .intro .stars-3 {
   background-image: url("/images/sky3.png");
   background-position: 40px 0;
-  opacity: 0.3;
 }
 .intro .stars-4 {
   background-image: url("/images/sky4.png");
@@ -384,8 +383,33 @@ body {
   height: 100%;
 }
 body {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763)) no-repeat;
+  background-image: url("/images/sky1.png"), url("/images/sky2.png"), url("/images/sky3.png"), url("/images/sky4.png"), -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763));
+  background-repeat: repeat-x repeat-y, repeat-x repeat-y, repeat-x repeat-y, repeat-x repeat-y, no-repeat;
+  background-position: 90px 0, 50px 0, 40px 0, 0 0, top left;
+  background-size: 145px 145px, 115px 115px, 95px 95px, 85px 85px, auto auto;
 }
 body {
   overflow: hidden;
+}
+.intro {
+  display: none;
+}
+.order .tee {
+  margin: 150px auto 0 auto;
+  width: 393px;
+  height: 417px;
+  background: transparent url("/images/tee.png");
+  position: relative;
+  cursor: pointer;
+}
+.order .tee .inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent url("/images/tee.png") 0 -417px;
+  opacity: 0.05;
+  -webkit-transition: opacity 200ms;
+}
+.order .tee .inner:hover {
+  opacity: 0.15;
 }
