@@ -137,7 +137,7 @@ table {
   left: 0;
   width: 200%;
   height: 200%;
-  -webkit-animation: zoomie 20.1s 1 linear forwards, fade-out 5s 20.130000000000003s 1 linear forwards;
+  -webkit-animation: zoomie 26.8s 1 linear forwards, fade-out 5s 26.840000000000003s 1 linear forwards;
 }
 .intro .stars-1,
 .intro .stars-2,
@@ -204,13 +204,13 @@ table {
 }
 .intro .words .sponsor {
   opacity: 0;
-  -webkit-animation: sponsor 30s 1 linear forwards;
+  -webkit-animation: sponsor 40s 1 linear forwards;
   -webkit-transform: rotate(2deg);
   font-size: 110px;
 }
 .intro .words .us {
   opacity: 0;
-  -webkit-animation: us 30s 1 linear forwards;
+  -webkit-animation: us 40s 1 linear forwards;
   -webkit-transform: rotate(2deg);
   font-size: 90px;
   font-size: 120px;
@@ -218,7 +218,7 @@ table {
 .intro .words .title {
   top: 35%;
   opacity: 0;
-  -webkit-animation: title 30s 1 linear forwards;
+  -webkit-animation: title 40s 1 linear forwards;
   font: 220px "KILLERELEPHANT";
 }
 .intro .words .title .a {
@@ -231,7 +231,7 @@ table {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-animation: comet 30s 1 linear forwards;
+  -webkit-animation: comet 40s 1 linear forwards;
 }
 .intro .comet-outer .comet {
   position: absolute;
@@ -249,7 +249,7 @@ table {
   height: 100%;
   z-index: 6;
   background-color: #fff;
-  -webkit-animation: fade-in 250ms 19.2s linear forwards;
+  -webkit-animation: fade-in 250ms 25.6s linear forwards;
   opacity: 0;
 }
 @-webkit-keyframes fade-in {
@@ -297,15 +297,15 @@ table {
     opacity: 0;
   }
 
-  5% {
+  4% {
     opacity: 1;
   }
 
-  13% {
+  12% {
     opacity: 1;
   }
 
-  14% {
+  15% {
     opacity: 0;
   }
 
@@ -318,19 +318,19 @@ table {
     opacity: 0;
   }
 
-  17% {
+  22% {
     opacity: 0;
   }
 
-  21% {
-    opacity: 1;
-  }
-
-  29% {
+  25% {
     opacity: 1;
   }
 
   34% {
+    opacity: 1;
+  }
+
+  36% {
     opacity: 0;
   }
 
