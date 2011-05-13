@@ -2,6 +2,10 @@
 @import "fonts"
 
 $intro-duration = 1000
+
+offscreen()
+  display none
+
 @import "intro"
 
 // Disable for now
@@ -21,6 +25,20 @@ html.animating
 
 body
   background-image url('/images/sky1.png'), url('/images/sky2.png'), url('/images/sky3.png'), url('/images/sky4.png'), -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763))
+  for prefix in '-webkit-' '-moz-' 'o-' ''
+    background-image "url('/images/sky1.png'), url('/images/sky2.png'), url('/images/sky3.png'), url('/images/sky4.png'), {prefix}linear-gradient(top left, #00162f, #004763)"
   background-repeat repeat, repeat, repeat, repeat, no-repeat
   background-position 90px 0, 50px 0, 40px 0, 0 0, top left
   background-size 145px 145px, 115px 115px, 95px 95px, 85px 85px, auto auto
+
+input[type='text']
+  outline none
+  border 2px solid $cyan
+  background #134869
+  font 14px $din-rounded
+  border-radius 5px
+  color white
+  line-height 1
+  padding 5px 8px
+  &::-webkit-input-placeholder
+    color white

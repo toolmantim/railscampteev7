@@ -4,8 +4,12 @@
     %meta(charset="utf-8")
     %link(rel="stylesheet" href="/css/railscampteev7.css")
     %title RUBPOCALYPSE
-    %script(type="text/javascript" src="http://use.typekit.com/wfr5ecw.js")
-    %script(type="text/javascript") try { Typekit.load(); } catch(e){ }
+    %script(src="http://use.typekit.com/wfr5ecw.js")
+    %script try { Typekit.load(); } catch(e){ }
+    %script(src="/js/jquery-1.6.1.min.js")
+    %script(src="/js/underscore-1.1.6.min.js")
+    %script(src="/js/backbone-0.3.3.min.js")
+    %script(src="/js/rubpocalypse.js")
     %link(rel="author" title="Tim Lucas" href="http://toolmantim.com/")
     %meta(name="viewport" content="width=1024")
   %body
@@ -29,13 +33,16 @@
       %header
         %hgroup
           %h1 Rubpocalypse
-          %h2 The <a href="http://railscampteev5.toolmantim.com">sequel</a>. Available to all attendees of <a href="http://">Railscamp Byron 2011</a>
-      %section
-        .locked
-          %h2 Unlock
+          %h2 The <a href="http://railscampteev5.toolmantim.com">sequel</a>, coming soon to all attendees of <a href="http://">Railscamp Byron 2011</a>
+      %section.airlock
+        .gate
           %form(action="/unlock")
-            %input(type="text" title="password" name="password" placeholder="password")
-        .unlocked
+            %h2 Unlo
+            %label(for="password") Password
+            %input(type="text" title="password" name="password" id="password" autocomplete="off")
+          .top-door
+          .bottom-door
+        .form
           %form(action="/order")
             %p &lt;insert order form here&gt;
       %footer
@@ -48,11 +55,3 @@
         %section
           %h1 Design &amp; build
           %p <a href="http://toolmantim.com">toolmantim</a>
-
-
-    %script
-      :plain
-        document.querySelector("form").addEventListener("submit", function(e) {
-          e.preventDefault();
-          document.querySelector("#order-form > section").className += "unlocked";
-        }, false);

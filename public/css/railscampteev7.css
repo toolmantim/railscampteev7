@@ -427,29 +427,73 @@ table {
   margin-top: 15px;
   font-size: 16px;
 }
-#order-form > section {
+#order-form > .airlock {
   height: 390px;
   position: relative;
 }
-#order-form > section > * {
+#order-form > .airlock.unlocked .gate form {
+  -webkit-transition: -webkit-transform 200ms;
+  -webkit-transform: scale(1, 0);
+}
+#order-form > .airlock.unlocked .gate .top-door,
+#order-form > .airlock.unlocked .gate .bottom-door {
+  -webkit-transition: height 600ms 180ms;
+  height: 0%;
+}
+#order-form > .airlock .gate {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#order-form > .airlock .gate .top-door,
+#order-form > .airlock .gate .bottom-door {
   position: absolute;
   left: 0;
   height: 50%;
   width: 100%;
-  background-color: rgba(0,192,255,0.5);
-  box-shadow: inset 0 0 15px #00c0ff;
+  background-color: rgba(0,192,255,0.3);
+  z-index: 1;
 }
-#order-form > section > *.locked {
+#order-form > .airlock .gate .top-door {
   top: -1px;
   border-bottom: 1px solid #00c0ff;
 }
-#order-form > section > *.unlocked {
+#order-form > .airlock .gate .bottom-door {
   border-top: 1px solid #00c0ff;
   bottom: -1px;
 }
-#order-form > section.unlocked > * {
-  -webkit-transition: height 800ms ease-out;
-  height: 0%;
+#order-form > .airlock .gate form {
+  position: relative;
+  top: 173px;
+  width: 200px;
+  height: 44px;
+  margin: 0 auto;
+  z-index: 2;
+}
+#order-form > .airlock .gate form input,
+#order-form > .airlock .gate form label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 5px 10px;
+  font-size: 18px;
+  z-index: 1;
+}
+#order-form > .airlock .gate form label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  z-index: 2;
+  text-transform: uppercase;
+  line-height: 1;
+}
+#order-form > .airlock .gate h2 {
+  display: none;
+}
+#order-form > .airlock .form {
+  display: none;
 }
 #order-form > footer {
   border-top: 2px solid #00c0ff;
@@ -485,7 +529,24 @@ html.animating body {
 }
 body {
   background-image: url("/images/sky1.png"), url("/images/sky2.png"), url("/images/sky3.png"), url("/images/sky4.png"), -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763));
+  background-image: "url('/images/sky1.png'), url('/images/sky2.png'), url('/images/sky3.png'), url('/images/sky4.png'), {prefix}linear-gradient(top left, #00162f, #004763)";
+  background-image: "url('/images/sky1.png'), url('/images/sky2.png'), url('/images/sky3.png'), url('/images/sky4.png'), {prefix}linear-gradient(top left, #00162f, #004763)";
+  background-image: "url('/images/sky1.png'), url('/images/sky2.png'), url('/images/sky3.png'), url('/images/sky4.png'), {prefix}linear-gradient(top left, #00162f, #004763)";
+  background-image: "url('/images/sky1.png'), url('/images/sky2.png'), url('/images/sky3.png'), url('/images/sky4.png'), {prefix}linear-gradient(top left, #00162f, #004763)";
   background-repeat: repeat, repeat, repeat, repeat, no-repeat;
   background-position: 90px 0, 50px 0, 40px 0, 0 0, top left;
   background-size: 145px 145px, 115px 115px, 95px 95px, 85px 85px, auto auto;
+}
+input[type="text"] {
+  outline: none;
+  border: 2px solid #00c0ff;
+  background: #134869;
+  font: 14px "ff-din-round-web-1", "ff-din-round-web-2";
+  border-radius: 5px;
+  color: #fff;
+  line-height: 1;
+  padding: 5px 8px;
+}
+input[type="text"]::-webkit-input-placeholder {
+  color: #fff;
 }
