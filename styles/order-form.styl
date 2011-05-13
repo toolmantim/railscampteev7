@@ -1,0 +1,83 @@
+$cyan = #00c0ff
+
+#order-form
+  color white
+  width 768px
+  margin 50px auto
+  border 2px solid $cyan
+  border-radius 50px
+  background-color rgba(0,0,0,.3)
+  box-shadow 0 0 25px $cyan
+  text-align center
+  
+  a
+    color #bce1ed
+    text-decoration none
+    &:hover
+      color #72dcff
+    &:active
+      color #00c0ff
+
+  > header
+    padding-top 50px
+    padding-bottom 40px
+    border-bottom 2px solid $cyan
+    h1
+      font 54px $killerelephant
+      line-height 1
+      position relative
+      display inline-block
+      .a
+        letter-spacing 10px
+      .l
+        letter-spacing -30px
+      &:after
+        content ' '
+        background transparent url('/images/comet.png') 0 0 no-repeat
+        -webkit-background-size 64px 68px
+        width 64px
+        height 68px
+        position absolute
+        top -15px
+        right -85px
+    h2
+      margin-top 15px
+    
+  > section
+    height 390px
+    position relative
+    > *
+      position absolute
+      left 0
+      height 50%
+      width 100%
+      background-color rgba($cyan, 0.5)
+      box-shadow inset 0 0 15px $cyan
+      &.locked
+        top -1px
+        border-bottom 1px solid $cyan
+      &.unlocked
+        border-top 1px solid $cyan
+        bottom -1px
+  
+    &.unlocked
+      > *
+        -webkit-transition height 800ms ease-out
+        height 0%
+  
+  > footer
+    border-top 2px solid $cyan
+    margin-left auto
+    margin-right auto
+    padding-left 50px
+    padding-right 50px
+    padding-top 40px
+    padding-bottom 50px
+    text-transform uppercase
+    section
+      display inline-block
+      width 30%
+      h1
+        font-size 11px
+      p
+        font-size 20px

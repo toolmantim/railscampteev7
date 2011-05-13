@@ -130,19 +130,19 @@ table {
   src: url("/fonts/eot/50493f78985b1f34bb991014e72588b3.eot");
   src: url("/fonts/eot/50493f78985b1f34bb991014e72588b3.eot?#iefix") format("embedded-opentype"), url("/fonts/woff/50493f78985b1f34bb991014e72588b3.woff") format("woff"), url("/fonts/ttf/50493f78985b1f34bb991014e72588b3.ttf") format("truetype"), url("/fonts/svg/50493f78985b1f34bb991014e72588b3.svg#KILLERELEPHANT") format("svg");
 }
-.intro {
+#intro {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763)) no-repeat;
   position: absolute;
   top: 0;
   left: 0;
   width: 200%;
   height: 200%;
-  -webkit-animation: zoomie 26.8s 1 linear forwards, fade-out 5s 26.840000000000003s 1 linear forwards;
+  -webkit-animation: zoomie 670s 1 linear forwards, fade-out 5s 671s 1 linear forwards;
 }
-.intro .stars-1,
-.intro .stars-2,
-.intro .stars-3,
-.intro .stars-4 {
+#intro .stars-1,
+#intro .stars-2,
+#intro .stars-3,
+#intro .stars-4 {
   position: absolute;
   top: 0;
   left: 0;
@@ -150,23 +150,23 @@ table {
   width: 100%;
   z-index: 1;
 }
-.intro .stars-1 {
+#intro .stars-1 {
   background-image: url("/images/sky1.png");
   background-position: 90px 0;
 }
-.intro .stars-2 {
+#intro .stars-2 {
   background-image: url("/images/sky2.png");
   background-position: 50px 0;
 }
-.intro .stars-3 {
+#intro .stars-3 {
   background-image: url("/images/sky3.png");
   background-position: 40px 0;
 }
-.intro .stars-4 {
+#intro .stars-4 {
   background-image: url("/images/sky4.png");
   background-position: 0 0;
 }
-.intro .ground {
+#intro .ground {
   width: 100%;
   height: 150px;
   background-color: #008000;
@@ -174,7 +174,7 @@ table {
   bottom: 0;
   z-index: 2;
 }
-.intro .ground .dinos {
+#intro .ground .dinos {
   width: 510px;
   height: 325px;
   background: transparent url("/images/dinos.png") no-repeat;
@@ -183,7 +183,7 @@ table {
   bottom: 50px;
   z-index: 3;
 }
-.intro .words {
+#intro .words {
   position: absolute;
   top: 0;
   left: 0;
@@ -192,7 +192,7 @@ table {
   color: #fff;
   font-family: "StrangeloveText";
 }
-.intro .words > * {
+#intro .words > * {
   display: block;
   position: absolute;
   text-align: center;
@@ -202,38 +202,38 @@ table {
   width: 100%;
   z-index: 5;
 }
-.intro .words .sponsor {
+#intro .words .sponsor {
   opacity: 0;
-  -webkit-animation: sponsor 40s 1 linear forwards;
+  -webkit-animation: sponsor 1000s 1 linear forwards;
   -webkit-transform: rotate(2deg);
   font-size: 110px;
 }
-.intro .words .us {
+#intro .words .us {
   opacity: 0;
-  -webkit-animation: us 40s 1 linear forwards;
+  -webkit-animation: us 1000s 1 linear forwards;
   -webkit-transform: rotate(2deg);
   font-size: 90px;
   font-size: 120px;
 }
-.intro .words .title {
+#intro .words .title {
   top: 35%;
   opacity: 0;
-  -webkit-animation: title 40s 1 linear forwards;
+  -webkit-animation: title 1000s 1 linear forwards;
   font: 220px "KILLERELEPHANT";
 }
-.intro .words .title .a {
+#intro .words .title .a {
   letter-spacing: 10px;
 }
-.intro .words .title .l {
+#intro .words .title .l {
   letter-spacing: -30px;
 }
-.intro .comet-outer {
+#intro .comet-outer {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-animation: comet 40s 1 linear forwards;
+  -webkit-animation: comet 1000s 1 linear forwards;
 }
-.intro .comet-outer .comet {
+#intro .comet-outer .comet {
   position: absolute;
   top: 0;
   left: 0;
@@ -243,13 +243,13 @@ table {
   -webkit-transform: scale(1.5);
   background: transparent url("/images/comet.png") no-repeat;
 }
-.intro .boom {
+#intro .boom {
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 6;
   background-color: #fff;
-  -webkit-animation: fade-in 250ms 25.6s linear forwards;
+  -webkit-animation: fade-in 250ms 640s linear forwards;
   opacity: 0;
 }
 @-webkit-keyframes fade-in {
@@ -372,16 +372,117 @@ table {
     -webkit-transform: translate3d(20%, 110%, 0);
   }
 }
+#intro {
+  display: none;
+}
+#order-form {
+  color: #fff;
+  width: 768px;
+  margin: 50px auto;
+  border: 2px solid #00c0ff;
+  border-radius: 50px;
+  background-color: rgba(0,0,0,0.3);
+  box-shadow: 0 0 25px #00c0ff;
+  text-align: center;
+}
+#order-form a {
+  color: #bce1ed;
+  text-decoration: none;
+}
+#order-form a:hover {
+  color: #72dcff;
+}
+#order-form a:active {
+  color: #00c0ff;
+}
+#order-form > header {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #00c0ff;
+}
+#order-form > header h1 {
+  font: 54px "KILLERELEPHANT";
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+}
+#order-form > header h1 .a {
+  letter-spacing: 10px;
+}
+#order-form > header h1 .l {
+  letter-spacing: -30px;
+}
+#order-form > header h1:after {
+  content: " ";
+  background: transparent url("/images/comet.png") 0 0 no-repeat;
+  -webkit-background-size: 64px 68px;
+  width: 64px;
+  height: 68px;
+  position: absolute;
+  top: -15px;
+  right: -85px;
+}
+#order-form > header h2 {
+  margin-top: 15px;
+}
+#order-form > section {
+  height: 390px;
+  position: relative;
+}
+#order-form > section > * {
+  position: absolute;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  background-color: rgba(0,192,255,0.5);
+  box-shadow: inset 0 0 15px #00c0ff;
+}
+#order-form > section > *.locked {
+  top: -1px;
+  border-bottom: 1px solid #00c0ff;
+}
+#order-form > section > *.unlocked {
+  border-top: 1px solid #00c0ff;
+  bottom: -1px;
+}
+#order-form > section.unlocked > * {
+  -webkit-transition: height 800ms ease-out;
+  height: 0%;
+}
+#order-form > footer {
+  border-top: 2px solid #00c0ff;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 40px;
+  padding-bottom: 50px;
+  text-transform: uppercase;
+}
+#order-form > footer section {
+  display: inline-block;
+  width: 30%;
+}
+#order-form > footer section h1 {
+  font-size: 11px;
+}
+#order-form > footer section p {
+  font-size: 20px;
+}
 html,
 body {
+  min-height: 100%;
+}
+html.animating,
+html.animating body {
   height: 100%;
+}
+html.animating body {
+  overflow: hidden;
 }
 body {
   background-image: url("/images/sky1.png"), url("/images/sky2.png"), url("/images/sky3.png"), url("/images/sky4.png"), -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763));
-  background-repeat: repeat-x repeat-y, repeat-x repeat-y, repeat-x repeat-y, repeat-x repeat-y, no-repeat;
+  background-repeat: repeat, repeat, repeat, repeat, no-repeat;
   background-position: 90px 0, 50px 0, 40px 0, 0 0, top left;
   background-size: 145px 145px, 115px 115px, 95px 95px, 85px 85px, auto auto;
-}
-body {
-  overflow: hidden;
 }
