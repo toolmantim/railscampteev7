@@ -51,10 +51,10 @@ $cyan = #00c0ff
     &.unlocked
       .gate
         form
-          -webkit-transition -webkit-transform 200ms
-          -webkit-transform scale(1, 0)
+          transition all 200ms
+          transform scale(1, 0)
         .top-door, .bottom-door
-          -webkit-transition height 600ms 180ms
+          transition height 600ms 180ms
           height 0%
     .gate
       width 100%
@@ -96,6 +96,11 @@ $cyan = #00c0ff
           z-index 2
           text-transform uppercase
           line-height 1
+          opacity 1
+          transition all 75ms
+          &.hidden
+            transform scale(0,1)
+            opacity 0
       h2
         offscreen()
       

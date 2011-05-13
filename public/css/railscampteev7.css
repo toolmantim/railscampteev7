@@ -432,12 +432,24 @@ table {
   position: relative;
 }
 #order-form > .airlock.unlocked .gate form {
-  -webkit-transition: -webkit-transform 200ms;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
   -webkit-transform: scale(1, 0);
+  -moz-transform: scale(1, 0);
+  -o-transform: scale(1, 0);
+  -webkit-transition: scale(1, 0);
+  -moz-transition: scale(1, 0);
+  -o-transition: scale(1, 0);
+  transition: scale(1, 0);
 }
 #order-form > .airlock.unlocked .gate .top-door,
 #order-form > .airlock.unlocked .gate .bottom-door {
   -webkit-transition: height 600ms 180ms;
+  -moz-transition: height 600ms 180ms;
+  -o-transition: height 600ms 180ms;
+  transition: height 600ms 180ms;
   height: 0%;
 }
 #order-form > .airlock .gate {
@@ -488,6 +500,21 @@ table {
   z-index: 2;
   text-transform: uppercase;
   line-height: 1;
+  opacity: 1;
+  -webkit-transition: all 75ms;
+  -moz-transition: all 75ms;
+  -o-transition: all 75ms;
+  transition: all 75ms;
+}
+#order-form > .airlock .gate form label.hidden {
+  -webkit-transform: scale(0, 1);
+  -moz-transform: scale(0, 1);
+  -o-transform: scale(0, 1);
+  -webkit-transition: scale(0, 1);
+  -moz-transition: scale(0, 1);
+  -o-transition: scale(0, 1);
+  transition: scale(0, 1);
+  opacity: 0;
 }
 #order-form > .airlock .gate h2 {
   display: none;
@@ -529,10 +556,10 @@ html.animating body {
 }
 body {
   background-image: url("/images/sky1.png"), url("/images/sky2.png"), url("/images/sky3.png"), url("/images/sky4.png"), -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763));
-  background-image: "url('/images/sky1.png'), url('/images/sky2.png'), url('/images/sky3.png'), url('/images/sky4.png'), {prefix}linear-gradient(top left, #00162f, #004763)";
-  background-image: "url('/images/sky1.png'), url('/images/sky2.png'), url('/images/sky3.png'), url('/images/sky4.png'), {prefix}linear-gradient(top left, #00162f, #004763)";
-  background-image: "url('/images/sky1.png'), url('/images/sky2.png'), url('/images/sky3.png'), url('/images/sky4.png'), {prefix}linear-gradient(top left, #00162f, #004763)";
-  background-image: "url('/images/sky1.png'), url('/images/sky2.png'), url('/images/sky3.png'), url('/images/sky4.png'), {prefix}linear-gradient(top left, #00162f, #004763)";
+  background-image: url("/images/sky1.png"), url("/images/sky2.png"), url("/images/sky3.png"), url("/images/sky4.png"), -webkit-linear-gradient(top left, #00162f, #004763);
+  background-image: url("/images/sky1.png"), url("/images/sky2.png"), url("/images/sky3.png"), url("/images/sky4.png"), -moz-linear-gradient(top left, #00162f, #004763);
+  background-image: url("/images/sky1.png"), url("/images/sky2.png"), url("/images/sky3.png"), url("/images/sky4.png"), -o-linear-gradient(top left, #00162f, #004763);
+  background-image: url("/images/sky1.png"), url("/images/sky2.png"), url("/images/sky3.png"), url("/images/sky4.png"), linear-gradient(top left, #00162f, #004763);
   background-repeat: repeat, repeat, repeat, repeat, no-repeat;
   background-position: 90px 0, 50px 0, 40px 0, 0 0, top left;
   background-size: 145px 145px, 115px 115px, 95px 95px, 85px 85px, auto auto;

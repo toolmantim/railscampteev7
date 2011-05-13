@@ -13,26 +13,37 @@ Rubpocalypse.OrderView = Backbone.View.extend({
 Rubpocalypse.AirlockView = Backbone.View.extend({
   events: {
     "blur input": "showPasswordLabel",
-    "focus input": "hidePassordLabel",
+    "focus input": "hidePasswordLabel",
     "submit form": "checkPassword"
   },
   initialize: function() {
-    this.hidePassordLabel();
+    this.togglePasswordLabel();
+  },
+  hidePasswordLabel: function() {
+    if (this.passwordBlank()) this.$("label").addClass("hidden");
   },
   showPasswordLabel: function() {
-    // TODO
+    if (this.passwordBlank()) this.$("label").removeClass("hidden");
   },
-  hidePassordLabel: function() {
-    // TODO
+  passwordBlank: function() {
+    return !this.$("input").val().length;
   },
   checkPassword: function(e) {
     e.preventDefault();
-    if (this.currentPassword() === "sekrit") this.unlock();
+    if (this.currentPassword() === "sekrit")
+      this.unlock();
+    else
+      this.incorrectPass();
   },
   currentPassword: function() {
     return this.$("input").val();
   },
   unlock: function() {
+    soundManager.play('success');
+    this.$("input").blur();
     $(this.el).addClass("unlocked");
+  },
+  incorrectPass: function() {
+    soundManager.play('error');
   }
 });
