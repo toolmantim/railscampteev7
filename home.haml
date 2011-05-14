@@ -53,22 +53,40 @@
                 %span.status Idle
             %fieldset.cut
               %h1 Cut
-              %input(type="radio" name="cut" value="f" title="Female")
-              %input(type="radio" name="cut" value="m" title="Male")
+              %label
+                %input(type="radio" name="cut" value="f")
+                %span Female
+              %label
+                %input(type="radio" name="cut" value="m")
+                %span Male
             %fieldset.size
               %h1 Size
-              %input(type="radio" name="size" value="xs" title="Small")
-              %input(type="radio" name="size" value="s" title="X-Small")
-              %input(type="radio" name="size" value="m" title="Medium")
-              %input(type="radio" name="size" value="l" title="Large")
-              %input(type="radio" name="size" value="xl" title="X-Large")
-              %input(type="radio" name="size" value="xl" title="XX-Large")
-            %fieldset.name
-              %h1 Name
-              %input(name="name")
-            %fieldset.email
-              %h1 Email
-              %input(name="email")
+              %label
+                %input(type="radio" name="size" value="xs")
+                %span Small
+              %label
+                %input(type="radio" name="size" value="s")
+                %span X-Small
+              %label
+                %input(type="radio" name="size" value="m")
+                %span Medium
+              %label
+                %input(type="radio" name="size" value="l")
+                %span Large
+              %label
+                %input(type="radio" name="size" value="xl")
+                %span X-Large
+              %label
+                %input(type="radio" name="size" value="xl")
+                %span XX-Large
+            %fieldset.personal
+              %h1 Name & Email
+              %label
+                %span Name
+                %input(type="text" name="name")
+              %label
+                %span Email
+                %input(type="text" name="email")
             %fieldset.submit
               %input(type="submit" value="Transmit")
 

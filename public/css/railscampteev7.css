@@ -628,10 +628,10 @@ table {
 }
 #order-form > .airlock .form form {
   position: absolute;
-  top: 80px;
+  top: 60px;
   left: 95px;
-  width: 580px;
-  height: 220px;
+  width: 540px;
+  height: 230px;
   background-color: rgba(0,192,255,0.3);
   border: 1px solid #00c0ff;
   box-shadow: 0 0 15px rgba(0,192,255,0.3);
@@ -642,19 +642,82 @@ table {
   -o-transform: scale(1, 0);
   transform: scale(1, 0);
   border-radius: 20px;
+  padding: 18px 20px 0 20px;
+  text-align: left;
 }
 #order-form > .airlock .form form header {
   text-transform: uppercase;
   font-size: 12px;
   color: #00c0ff;
   text-align: left;
-  padding: 18px 20px 0 20px;
 }
 #order-form > .airlock .form form header .status {
   float: right;
 }
-#order-form > .airlock .form form fieldset {
+#order-form > .airlock .form form fieldset.cut,
+#order-form > .airlock .form form fieldset.size,
+#order-form > .airlock .form form fieldset.personal label {
+  position: relative;
+  display: inline-block;
+  width: 268px;
+}
+#order-form > .airlock .form form fieldset.cut,
+#order-form > .airlock .form form fieldset.size {
+  margin-bottom: 10px;
+}
+#order-form > .airlock .form form fieldset.cut h1,
+#order-form > .airlock .form form fieldset.size h1 {
   display: none;
+}
+#order-form > .airlock .form form fieldset.cut label,
+#order-form > .airlock .form form fieldset.size label {
+  height: 80px;
+  width: 40px;
+  overflow: hidden;
+  display: inline-block;
+}
+#order-form > .airlock .form form fieldset.cut label span,
+#order-form > .airlock .form form fieldset.size label span {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  display: inline-block;
+}
+#order-form > .airlock .form form fieldset.personal h1 {
+  display: none;
+}
+#order-form > .airlock .form form fieldset.personal label {
+  position: relative;
+}
+#order-form > .airlock .form form fieldset.personal label span {
+  position: absolute;
+  top: 13px;
+  left: 12px;
+  text-transform: uppercase;
+  font: 15px/1 "ff-din-round-web-1", "ff-din-round-web-2";
+}
+#order-form > .airlock .form form fieldset.personal label input {
+  width: 220px;
+}
+#order-form > .airlock .form form fieldset.submit input {
+  position: absolute;
+  margin: 0;
+  padding: 15px 0;
+  left: -1px;
+  bottom: -1px;
+  border: 2px solid #00c0ff;
+  background: #134869;
+  font: 24px "ff-din-round-web-1", "ff-din-round-web-2";
+  border-radius: 5px;
+  color: #fff;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  width: 582px;
+  border-radius: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
 }
 #order-form > footer {
   border-top: 2px solid #00c0ff;
