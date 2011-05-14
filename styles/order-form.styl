@@ -111,6 +111,10 @@ $success-color = #2aff00
         .wheel-outer, .wheel-inner
           position absolute
           background -webkit-gradient(linear, 0 0, 0 100%, color-stop(.33, rgba($cyan, .4)), color-stop(.33, transparent), to(transparent)), #0e5a81
+          background -webkit-linear-gradient(top, rgba($cyan, .4) 33%, transparent 33%, transparent), #0e5a81
+          background -moz-linear-gradient(top, rgba($cyan, .4) 33%, transparent 33%, transparent), #0e5a81
+          background -o-linear-gradient(top, rgba($cyan, .4) 33%, transparent 33%, transparent), #0e5a81
+          background linear-gradient(top, rgba($cyan, .4) 33%, transparent 33%, transparent), #0e5a81
           border 2px solid $cyan
         .wheel-outer
           background-size 11px 11px, auto auto

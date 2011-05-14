@@ -4,7 +4,7 @@ Rubpocalypse = {
 };
 
 $(function() {
-  new Rubpocalypse.Views.Order({el:$("#order-form")});
+  new Rubpocalypse.Views.Order({el:$("#order-form").get(0)});
 });
 
 audiojs.events.ready(function() {
@@ -21,7 +21,7 @@ audiojs.events.ready(function() {
 Rubpocalypse.Views.Order = Backbone.View.extend({
   initialize: function() {
     var airlock = this.$(".airlock"),
-        gateView = new Rubpocalypse.Views.Gate({el:airlock.find(".gate")});
+        gateView = new Rubpocalypse.Views.Gate({el:airlock.find(".gate").get(0)});
     gateView.bind("unlocked", function() { airlock.addClass("unlocked"); });
   }
 });
@@ -51,8 +51,8 @@ Rubpocalypse.Views.Gate = Backbone.View.extend({
     // For suspense we want to ensure it takes at least Pi/2 seconds to verify
     setTimeout(_.bind(function() {
       $.ajax({
-        url: "/authorise",
-        type: "POST",
+        url: this.$("form").attr("action"),
+        type: this.$("form").attr("method"),
         data: {password:password},
         context: this,
         statusCode: {

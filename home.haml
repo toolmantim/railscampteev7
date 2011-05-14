@@ -37,7 +37,7 @@
           %h2 The <a href="http://railscampteev5.toolmantim.com">sequel</a>, coming soon to all attendees of <a href="http://">Railscamp Byron 2011</a>
       .airlock
         %section.gate
-          %form(action="/unlock")
+          %form(action="/authorise" method="post")
             .wheel-outer
             .wheel-inner
             %h2 Unlock
@@ -46,7 +46,7 @@
           .top-door
           .bottom-door
         %section.form
-          %form(action="/order")
+          %form(action="/order" method="post")
             %header
               %h1
                 Order module REV 138d5
