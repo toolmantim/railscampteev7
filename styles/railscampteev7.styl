@@ -6,17 +6,23 @@ $intro-duration = 1000
 offscreen()
   display none
 
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -o-{prop} args
+  {prop} args
+
 transition()
-  -webkit-transition arguments
-  -moz-transition arguments
-  -o-transition arguments
-  transition arguments
+  vendor('transition', arguments)
+
+transition-delay()
+  vendor('transition-delay', arguments)  
 
 transform()
-  -webkit-transform arguments
-  -moz-transform arguments
-  -o-transform arguments
-  transition arguments
+  vendor('transform', arguments)
+
+background-size()
+  vendor('background-size', arguments)
 
 @import "intro"
 

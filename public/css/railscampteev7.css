@@ -417,6 +417,9 @@ table {
   content: " ";
   background: transparent url("/images/comet.png") 0 0 no-repeat;
   -webkit-background-size: 64px 68px;
+  -moz-background-size: 64px 68px;
+  -o-background-size: 64px 68px;
+  background-size: 64px 68px;
   width: 64px;
   height: 68px;
   position: absolute;
@@ -439,10 +442,7 @@ table {
   -webkit-transform: scale(1, 0);
   -moz-transform: scale(1, 0);
   -o-transform: scale(1, 0);
-  -webkit-transition: scale(1, 0);
-  -moz-transition: scale(1, 0);
-  -o-transition: scale(1, 0);
-  transition: scale(1, 0);
+  transform: scale(1, 0);
 }
 #order-form > .airlock.unlocked .gate .top-door,
 #order-form > .airlock.unlocked .gate .bottom-door {
@@ -451,6 +451,20 @@ table {
   -o-transition: height 600ms 180ms;
   transition: height 600ms 180ms;
   height: 0%;
+}
+#order-form > .airlock.unlocked .form form {
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transition: all 150ms;
+  -moz-transition: all 150ms;
+  -o-transition: all 150ms;
+  transition: all 150ms;
+  -webkit-transition-delay: 1s;
+  -moz-transition-delay: 1s;
+  -o-transition-delay: 1s;
+  transition-delay: 1s;
 }
 #order-form > .airlock .gate {
   width: 100%;
@@ -510,17 +524,36 @@ table {
   -webkit-transform: scale(0, 1);
   -moz-transform: scale(0, 1);
   -o-transform: scale(0, 1);
-  -webkit-transition: scale(0, 1);
-  -moz-transition: scale(0, 1);
-  -o-transition: scale(0, 1);
-  transition: scale(0, 1);
+  transform: scale(0, 1);
   opacity: 0;
 }
 #order-form > .airlock .gate h2 {
   display: none;
 }
 #order-form > .airlock .form {
-  display: none;
+  position: absolute;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0.5, rgba(255,255,255,0.1)), color-stop(0.5, transparent), to(transparent));
+  -webkit-background-size: 4px 4px;
+  -moz-background-size: 4px 4px;
+  -o-background-size: 4px 4px;
+  background-size: 4px 4px;
+  height: 100%;
+  width: 100%;
+}
+#order-form > .airlock .form form {
+  position: absolute;
+  top: 80px;
+  left: 95px;
+  width: 580px;
+  height: 220px;
+  background-color: rgba(0,0,0,0.2);
+  border: 2px solid #134869;
+  box-shadow: 0 0 25px rgba(0,192,255,0.25);
+  -webkit-transform: scale(1, 0);
+  -moz-transform: scale(1, 0);
+  -o-transform: scale(1, 0);
+  transform: scale(1, 0);
+  border-radius: 20px;
 }
 #order-form > footer {
   border-top: 2px solid #00c0ff;
@@ -562,6 +595,9 @@ body {
   background-image: url("/images/sky1.png"), url("/images/sky2.png"), url("/images/sky3.png"), url("/images/sky4.png"), linear-gradient(top left, #00162f, #004763);
   background-repeat: repeat, repeat, repeat, repeat, no-repeat;
   background-position: 90px 0, 50px 0, 40px 0, 0 0, top left;
+  -webkit-background-size: 145px 145px, 115px 115px, 95px 95px, 85px 85px, auto auto;
+  -moz-background-size: 145px 145px, 115px 115px, 95px 95px, 85px 85px, auto auto;
+  -o-background-size: 145px 145px, 115px 115px, 95px 95px, 85px 85px, auto auto;
   background-size: 145px 145px, 115px 115px, 95px 95px, 85px 85px, auto auto;
 }
 input[type="text"] {

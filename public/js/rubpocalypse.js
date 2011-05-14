@@ -1,5 +1,10 @@
 $(function() {
   new Rubpocalypse.OrderView({el:$("#order-form")});
+
+  var form = $(".gate form");
+  form.find("input").val('sekrit');
+  form.submit();
+
 });
 
 Rubpocalypse = {};
@@ -15,9 +20,6 @@ Rubpocalypse.AirlockView = Backbone.View.extend({
     "blur input": "showPasswordLabel",
     "focus input": "hidePasswordLabel",
     "submit form": "checkPassword"
-  },
-  initialize: function() {
-    this.togglePasswordLabel();
   },
   hidePasswordLabel: function() {
     if (this.passwordBlank()) this.$("label").addClass("hidden");
