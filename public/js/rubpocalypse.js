@@ -6,9 +6,9 @@ Rubpocalypse = {
 $(function() {
   new Rubpocalypse.Views.Order({el:$("#order-form")});
   
-  var f = $(".gate form");
-  f.find("input").val("sekrit");
-  f.submit();
+  // var f = $(".gate form");
+  // f.find("input").val("sekrit");
+  // f.submit();
 });
 
 // We want document ready, to push these file loads to the back of the queue
