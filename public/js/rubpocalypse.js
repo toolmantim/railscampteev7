@@ -4,24 +4,27 @@ Rubpocalypse = {
 };
 
 $(function() {
-  new Rubpocalypse.Views.Order({el:$("#order-form").get(0)});
+  new Rubpocalypse.Views.Order({el:$("#order-form")});
 });
 
-audiojs.events.ready(function() {
-  _.each(["success", "error"], function(s) {
-    var elem = document.createElement("audio");
-    elem.preload = true;
-    elem.loop = false;
-    elem.src = "/sounds/" + s + ".mp3";
-    $("body").append(elem);
-    Rubpocalypse.Sounds[s] = audiojs.create(elem, {createPlayer: false, css: false});
+// We want document ready, to push these file loads to the back of the queue
+$(document).ready(function() {
+  audiojs.events.ready(function() {
+    _.each(["success", "error"], function(s) {
+      var elem = document.createElement("audio");
+      elem.preload = true;
+      elem.loop = false;
+      elem.src = "/sounds/" + s + ".mp3";
+      $("body").append(elem);
+      Rubpocalypse.Sounds[s] = audiojs.create(elem, {createPlayer: false, css: false});
+    });
   });
 });
 
 Rubpocalypse.Views.Order = Backbone.View.extend({
   initialize: function() {
     var airlock = this.$(".airlock"),
-        gateView = new Rubpocalypse.Views.Gate({el:airlock.find(".gate").get(0)});
+        gateView = new Rubpocalypse.Views.Gate({el:airlock.find(".gate")});
     gateView.bind("unlocked", function() { airlock.addClass("unlocked"); });
   }
 });
