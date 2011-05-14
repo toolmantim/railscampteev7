@@ -1,0 +1,14 @@
+Railscamp Tee v7 - the RUBPOCALYPSE
+
+For production all you need is:
+  - Ruby 1.8+
+  - bundler (gem install bundler)
+  - a rack-enabled web server (like Heroku)
+
+For dev:
+  - thin (gem install thin)
+  - stylus (npm install stylus)
+
+Uses audio.js for HTML5 audio, Backbone & Underscore for some JS structure, a bunch of font-faces, and a whole lot of CSS3.
+
+TODO: Add license information

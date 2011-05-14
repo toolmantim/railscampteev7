@@ -1,4 +1,7 @@
 // A cross-browser javascript shim for html5 audio
+//
+// From my fork:
+// https://github.com/toolmantim/audiojs/tree/patch-1
 (function(audiojs, audiojsInstance, container) {
   // Use the path to the audio.js file to create relative paths to the swf and player graphics
   // Remember that some systems (e.g. ruby on rails) append strings like '?1301478336' to asset paths
