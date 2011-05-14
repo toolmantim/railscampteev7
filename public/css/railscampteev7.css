@@ -383,6 +383,8 @@ table {
   border-radius: 50px;
   background-color: rgba(0,0,0,0.3);
   box-shadow: 0 0 25px #00c0ff;
+  -webkit-box-shadow: 0 0 25px #00c0ff;
+  -moz-box-shadow: 0 0 25px #00c0ff;
   font-family: "ff-din-round-web-1", "ff-din-round-web-2";
   text-align: center;
 }
@@ -633,6 +635,8 @@ table {
   background-color: rgba(0,192,255,0.3);
   border: 1px solid #00c0ff;
   box-shadow: 0 0 15px rgba(0,192,255,0.3);
+  -webkit-box-shadow: 0 0 15px rgba(0,192,255,0.3);
+  -moz-box-shadow: 0 0 15px rgba(0,192,255,0.3);
   -webkit-transform: scale(1, 0);
   -moz-transform: scale(1, 0);
   -o-transform: scale(1, 0);
