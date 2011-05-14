@@ -57,10 +57,13 @@ $cyan = #00c0ff
           transition height 600ms 180ms
           height 0%
       .form
+        /*opacity 1
+                transition opacity 1s
+                transition-delay 500ms*/
         form
           transform scale(1,1)
           transition all 150ms
-          transition-delay 1s
+          transition-delay 1.15s
         
     .gate
       width 100%
@@ -111,8 +114,8 @@ $cyan = #00c0ff
         offscreen()
     .form
       position absolute
-      background-image -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, rgba(255,255,255,.1)), color-stop(.5, transparent), to(transparent))
-      background-size 4px 4px
+      background-image -webkit-gradient(linear, 0 0, 0 100%, color-stop(.33, rgba($cyan,.15)), color-stop(.33, transparent), to(transparent))
+      background-size 3px 3px
       height 100%
       width 100%
       form
@@ -121,11 +124,19 @@ $cyan = #00c0ff
         left 95px
         width 580px
         height 220px
-        background-color rgba(0,0,0,.2)
+        background-color rgba(#021833,.4)
         border 2px solid #134869
-        box-shadow 0 0 25px rgba($cyan, .25)
+        box-shadow 0 0 15px rgba($cyan, .25)
         transform scale(1,0)
         border-radius 20px
+        header
+          text-transform uppercase
+          font-size 12px
+          color $cyan
+          text-align left
+          padding 20px 20px 0 20px
+          .status
+            float right
       
   > footer
     border-top 2px solid $cyan

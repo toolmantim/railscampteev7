@@ -461,10 +461,10 @@ table {
   -moz-transition: all 150ms;
   -o-transition: all 150ms;
   transition: all 150ms;
-  -webkit-transition-delay: 1s;
-  -moz-transition-delay: 1s;
-  -o-transition-delay: 1s;
-  transition-delay: 1s;
+  -webkit-transition-delay: 1.15s;
+  -moz-transition-delay: 1.15s;
+  -o-transition-delay: 1.15s;
+  transition-delay: 1.15s;
 }
 #order-form > .airlock .gate {
   width: 100%;
@@ -532,11 +532,11 @@ table {
 }
 #order-form > .airlock .form {
   position: absolute;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0.5, rgba(255,255,255,0.1)), color-stop(0.5, transparent), to(transparent));
-  -webkit-background-size: 4px 4px;
-  -moz-background-size: 4px 4px;
-  -o-background-size: 4px 4px;
-  background-size: 4px 4px;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0.33, rgba(0,192,255,0.15)), color-stop(0.33, transparent), to(transparent));
+  -webkit-background-size: 3px 3px;
+  -moz-background-size: 3px 3px;
+  -o-background-size: 3px 3px;
+  background-size: 3px 3px;
   height: 100%;
   width: 100%;
 }
@@ -546,14 +546,24 @@ table {
   left: 95px;
   width: 580px;
   height: 220px;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(2,24,51,0.4);
   border: 2px solid #134869;
-  box-shadow: 0 0 25px rgba(0,192,255,0.25);
+  box-shadow: 0 0 15px rgba(0,192,255,0.25);
   -webkit-transform: scale(1, 0);
   -moz-transform: scale(1, 0);
   -o-transform: scale(1, 0);
   transform: scale(1, 0);
   border-radius: 20px;
+}
+#order-form > .airlock .form form header {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #00c0ff;
+  text-align: left;
+  padding: 20px 20px 0 20px;
+}
+#order-form > .airlock .form form header .status {
+  float: right;
 }
 #order-form > footer {
   border-top: 2px solid #00c0ff;

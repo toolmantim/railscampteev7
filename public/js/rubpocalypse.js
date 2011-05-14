@@ -1,9 +1,9 @@
 $(function() {
   new Rubpocalypse.OrderView({el:$("#order-form")});
 
-  var form = $(".gate form");
-  form.find("input").val('sekrit');
-  form.submit();
+  // var form = $(".gate form");
+  // form.find("input").val('sekrit');
+  // form.submit();
 
 });
 
@@ -11,11 +11,13 @@ Rubpocalypse = {};
 
 Rubpocalypse.OrderView = Backbone.View.extend({
   initialize: function() {
-    new Rubpocalypse.AirlockView({el:this.$(".airlock")});
+    var airlock = this.$(".airlock"),
+        gateView = new Rubpocalypse.GateView({el:airlock.find(".gate")});
+    gateView.bind("unlocked", function() { airlock.addClass("unlocked"); });
   }
 });
 
-Rubpocalypse.AirlockView = Backbone.View.extend({
+Rubpocalypse.GateView = Backbone.View.extend({
   events: {
     "blur input": "showPasswordLabel",
     "focus input": "hidePasswordLabel",
@@ -43,7 +45,7 @@ Rubpocalypse.AirlockView = Backbone.View.extend({
   unlock: function() {
     soundManager.play('success');
     this.$("input").blur();
-    $(this.el).addClass("unlocked");
+    this.trigger("unlocked");
   },
   incorrectPass: function() {
     soundManager.play('error');

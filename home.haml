@@ -43,17 +43,41 @@
         %hgroup
           %h1 Rubpocalypse
           %h2 The <a href="http://railscampteev5.toolmantim.com">sequel</a>, coming soon to all attendees of <a href="http://">Railscamp Byron 2011</a>
-      %section.airlock
-        .gate
+      .airlock
+        %section.gate
           %form(action="/unlock")
-            %h2 Unlo
+            %h2 Unlock
             %label(for="password") Password
-            %input(type="text" title="password" name="password" id="password" autocomplete="off")
+            %input#password(type="text" title="password" name="password" autocomplete="off")
           .top-door
           .bottom-door
-        .form
+        %section.form
           %form(action="/order")
-            %p &lt;insert order form here&gt;
+            %header
+              %h1
+                Order module REV 138d5
+                %span.status Idle
+            %fieldset.cut
+              %h1 Cut
+              %input(type="radio" name="cut" value="f" title="Female")
+              %input(type="radio" name="cut" value="m" title="Male")
+            %fieldset.size
+              %h1 Size
+              %input(type="radio" name="size" value="xs" title="Small")
+              %input(type="radio" name="size" value="s" title="X-Small")
+              %input(type="radio" name="size" value="m" title="Medium")
+              %input(type="radio" name="size" value="l" title="Large")
+              %input(type="radio" name="size" value="xl" title="X-Large")
+              %input(type="radio" name="size" value="xl" title="XX-Large")
+            %fieldset.name
+              %h1 Name
+              %input(name="name")
+            %fieldset.email
+              %h1 Email
+              %input(name="email")
+            %fieldset.submit
+              %input(type="submit" value="Transmit")
+
       %footer
         %section
           %h1 Illustration
