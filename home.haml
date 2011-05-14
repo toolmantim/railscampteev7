@@ -9,15 +9,7 @@
     %script(src="/js/jquery-1.6.1.min.js")
     %script(src="/js/underscore-1.1.6.min.js")
     %script(src="/js/backbone-0.3.3.min.js")
-    %script(src="/js/soundmanager2-nodebug-jsmin.js")
-    %script
-      :plain
-        soundManager.url = '/swf/';
-        soundManager.useHTML5Audio = true;
-        soundManager.onready(function() {
-          soundManager.createSound('success','/sounds/success.mp3');
-          soundManager.createSound('error','/sounds/error.mp3');
-        });
+    %script(src="/js/audio.js")
     %script(src="/js/rubpocalypse.js")
     %link(rel="author" title="Tim Lucas" href="http://toolmantim.com/")
     %meta(name="viewport" content="width=1024")
@@ -46,9 +38,11 @@
       .airlock
         %section.gate
           %form(action="/unlock")
+            .wheel-outer
+            .wheel-inner
             %h2 Unlock
             %label(for="password") Passphrase
-            %input#password(type="text" title="password" name="password" autocomplete="off")
+            %input#password(type="text" title="password" name="password" autocomplete="off" maxlength="20")
           .top-door
           .bottom-door
         %section.form

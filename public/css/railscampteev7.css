@@ -461,10 +461,10 @@ table {
   -moz-transition: all 150ms;
   -o-transition: all 150ms;
   transition: all 150ms;
-  -webkit-transition-delay: 1.15s;
-  -moz-transition-delay: 1.15s;
-  -o-transition-delay: 1.15s;
-  transition-delay: 1.15s;
+  -webkit-transition-delay: 700ms;
+  -moz-transition-delay: 700ms;
+  -o-transition-delay: 700ms;
+  transition-delay: 700ms;
 }
 #order-form > .airlock .gate {
   width: 100%;
@@ -505,34 +505,114 @@ table {
   text-align: center;
   padding: 5px 10px;
   font-size: 18px;
-  z-index: 1;
+}
+#order-form > .airlock .gate form input {
+  z-index: 3;
 }
 #order-form > .airlock .gate form label {
   position: absolute;
   top: 10px;
   left: 0;
-  z-index: 2;
+  z-index: 4;
   text-transform: uppercase;
   line-height: 1;
-  opacity: 1;
-  -webkit-transition: all 75ms;
-  -moz-transition: all 75ms;
-  -o-transition: all 75ms;
-  transition: all 75ms;
+  -webkit-transition: all 95ms;
+  -moz-transition: all 95ms;
+  -o-transition: all 95ms;
+  transition: all 95ms;
 }
 #order-form > .airlock .gate form label.hidden {
   -webkit-transform: scale(0, 1);
   -moz-transform: scale(0, 1);
   -o-transform: scale(0, 1);
   transform: scale(0, 1);
-  opacity: 0;
+}
+#order-form > .airlock .gate form .wheel-outer,
+#order-form > .airlock .gate form .wheel-inner {
+  position: absolute;
+  background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0.33, rgba(0,192,255,0.4)), color-stop(0.33, transparent), to(transparent)), #0e5a81;
+  border: 2px solid #00c0ff;
+}
+#order-form > .airlock .gate form .wheel-outer {
+  -webkit-background-size: 11px 11px, auto auto;
+  -moz-background-size: 11px 11px, auto auto;
+  -o-background-size: 11px 11px, auto auto;
+  background-size: 11px 11px, auto auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 49px;
+  top: -19px;
+  left: 70px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+#order-form > .airlock .gate form .wheel-inner {
+  -webkit-background-size: 11px 11px, auto auto;
+  -moz-background-size: 11px 11px, auto auto;
+  -o-background-size: 11px 11px, auto auto;
+  background-size: 11px 11px, auto auto;
+  width: 58px;
+  height: 58px;
+  border-radius: 29px;
+  top: -8px;
+  left: 81px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+#order-form > .airlock .gate.verifying .wheel-inner,
+#order-form > .airlock .gate.verifying .wheel-outer {
+  -webkit-transition: all 10s linear;
+  -moz-transition: all 10s linear;
+  -o-transition: all 10s linear;
+  transition: all 10s linear;
+}
+#order-form > .airlock .gate.verifying .wheel-inner {
+  -webkit-transform: rotate(-405deg);
+  -moz-transform: rotate(-405deg);
+  -o-transform: rotate(-405deg);
+  transform: rotate(-405deg);
+}
+#order-form > .airlock .gate.verifying .wheel-outer {
+  -webkit-transform: rotate(405deg);
+  -moz-transform: rotate(405deg);
+  -o-transform: rotate(405deg);
+  transform: rotate(405deg);
+}
+#order-form > .airlock .gate.verifying label {
+  color: #00c0ff;
+}
+#order-form > .airlock .gate.error .wheel-inner,
+#order-form > .airlock .gate.error .wheel-outer {
+  background: rgba(255,76,39,0.25);
+  border-color: #ff4c27;
+}
+#order-form > .airlock .gate.error label {
+  color: #ff4c27;
+}
+#order-form > .airlock .gate.error input {
+  border-color: #ff4c27;
+}
+#order-form > .airlock .gate.success .wheel-inner,
+#order-form > .airlock .gate.success .wheel-outer {
+  background: rgba(42,255,0,0.25);
+  border-color: #2aff00;
+}
+#order-form > .airlock .gate.success label {
+  color: #2aff00;
+}
+#order-form > .airlock .gate.success input {
+  border-color: #2aff00;
 }
 #order-form > .airlock .gate h2 {
   display: none;
 }
 #order-form > .airlock .form {
   position: absolute;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0.33, rgba(0,192,255,0.15)), color-stop(0.33, transparent), to(transparent));
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0.33, rgba(0,192,255,0.13)), color-stop(0.33, transparent), to(transparent));
   -webkit-background-size: 3px 3px;
   -moz-background-size: 3px 3px;
   -o-background-size: 3px 3px;
@@ -546,9 +626,9 @@ table {
   left: 95px;
   width: 580px;
   height: 220px;
-  background-color: rgba(2,24,51,0.4);
-  border: 2px solid #134869;
-  box-shadow: 0 0 15px rgba(0,192,255,0.25);
+  background-color: rgba(0,192,255,0.3);
+  border: 1px solid #00c0ff;
+  box-shadow: 0 0 15px rgba(0,192,255,0.3);
   -webkit-transform: scale(1, 0);
   -moz-transform: scale(1, 0);
   -o-transform: scale(1, 0);
@@ -560,10 +640,13 @@ table {
   font-size: 12px;
   color: #00c0ff;
   text-align: left;
-  padding: 20px 20px 0 20px;
+  padding: 18px 20px 0 20px;
 }
 #order-form > .airlock .form form header .status {
   float: right;
+}
+#order-form > .airlock .form form fieldset {
+  display: none;
 }
 #order-form > footer {
   border-top: 2px solid #00c0ff;

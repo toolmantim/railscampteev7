@@ -1,4 +1,6 @@
 $cyan = #00c0ff
+$error-color = #ff4c27
+$success-color = #2aff00
 
 #order-form
   color white
@@ -57,13 +59,10 @@ $cyan = #00c0ff
           transition height 600ms 180ms
           height 0%
       .form
-        /*opacity 1
-                transition opacity 1s
-                transition-delay 500ms*/
         form
           transform scale(1,1)
           transition all 150ms
-          transition-delay 1.15s
+          transition-delay 700ms
         
     .gate
       width 100%
@@ -97,24 +96,70 @@ $cyan = #00c0ff
           text-align center
           padding 5px 10px
           font-size 18px
-          z-index 1
+        input
+          z-index 3
         label
           position absolute
           top 10px
           left 0
-          z-index 2
+          z-index 4
           text-transform uppercase
           line-height 1
-          opacity 1
-          transition all 75ms
+          transition all 95ms
           &.hidden
             transform scale(0,1)
-            opacity 0
+        .wheel-outer, .wheel-inner
+          position absolute
+          background -webkit-gradient(linear, 0 0, 0 100%, color-stop(.33, rgba($cyan, .4)), color-stop(.33, transparent), to(transparent)), #0e5a81
+          border 2px solid $cyan
+        .wheel-outer
+          background-size 11px 11px, auto auto
+          width 80px
+          height 80px
+          border-radius 49px
+          top -19px
+          left 70px
+          transform rotate(0deg)
+        .wheel-inner
+          background-size 11px 11px, auto auto
+          width 58px
+          height 58px
+          border-radius 29px
+          top -8px
+          left 81px
+          transform rotate(0deg)
+
+      &.verifying
+        .wheel-inner, .wheel-outer
+          transition all 10s linear
+        .wheel-inner
+          transform rotate(-405deg)
+        .wheel-outer
+          transform rotate(405deg)
+        label
+          color $cyan
+      &.error
+        .wheel-inner, .wheel-outer
+          background rgba($error-color, .25)
+          border-color $error-color
+        label
+          color $error-color
+        input
+          border-color $error-color
+      &.success
+        .wheel-inner, .wheel-outer
+          background rgba($success-color, .25)
+          border-color $success-color
+        label
+          color $success-color
+        input
+          border-color $success-color
+          
       h2
         offscreen()
     .form
       position absolute
-      background-image -webkit-gradient(linear, 0 0, 0 100%, color-stop(.33, rgba($cyan,.15)), color-stop(.33, transparent), to(transparent))
+      background-image -webkit-gradient(linear, 0 0, 0 100%, color-stop(.33, rgba($cyan,.13)), color-stop(.33, transparent), to(transparent))
       background-size 3px 3px
       height 100%
       width 100%
@@ -124,9 +169,9 @@ $cyan = #00c0ff
         left 95px
         width 580px
         height 220px
-        background-color rgba(#021833,.4)
-        border 2px solid #134869
-        box-shadow 0 0 15px rgba($cyan, .25)
+        background-color rgba($cyan,.3)
+        border 1px solid $cyan
+        box-shadow 0 0 15px rgba($cyan, .3)
         transform scale(1,0)
         border-radius 20px
         header
@@ -134,9 +179,11 @@ $cyan = #00c0ff
           font-size 12px
           color $cyan
           text-align left
-          padding 20px 20px 0 20px
+          padding 18px 20px 0 20px
           .status
             float right
+        fieldset
+          display none
       
   > footer
     border-top 2px solid $cyan

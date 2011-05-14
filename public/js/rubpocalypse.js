@@ -1,23 +1,32 @@
+Rubpocalypse = {
+  Sounds: {},
+  Views: {}
+};
+
 $(function() {
-  new Rubpocalypse.OrderView({el:$("#order-form")});
-
-  // var form = $(".gate form");
-  // form.find("input").val('sekrit');
-  // form.submit();
-
+  new Rubpocalypse.Views.Order({el:$("#order-form")});
 });
 
-Rubpocalypse = {};
+audiojs.events.ready(function() {
+  _.each(["success", "error"], function(s) {
+    var elem = document.createElement("audio");
+    elem.preload = true;
+    elem.loop = false;
+    elem.src = "/sounds/" + s + ".mp3";
+    $("body").append(elem);
+    Rubpocalypse.Sounds[s] = audiojs.create(elem, {createPlayer: false, css: false});
+  });
+});
 
-Rubpocalypse.OrderView = Backbone.View.extend({
+Rubpocalypse.Views.Order = Backbone.View.extend({
   initialize: function() {
     var airlock = this.$(".airlock"),
-        gateView = new Rubpocalypse.GateView({el:airlock.find(".gate")});
+        gateView = new Rubpocalypse.Views.Gate({el:airlock.find(".gate")});
     gateView.bind("unlocked", function() { airlock.addClass("unlocked"); });
   }
 });
 
-Rubpocalypse.GateView = Backbone.View.extend({
+Rubpocalypse.Views.Gate = Backbone.View.extend({
   events: {
     "blur input": "showPasswordLabel",
     "focus input": "hidePasswordLabel",
@@ -34,20 +43,52 @@ Rubpocalypse.GateView = Backbone.View.extend({
   },
   checkPassword: function(e) {
     e.preventDefault();
-    if (this.currentPassword() === "sekrit")
-      this.unlock();
-    else
-      this.incorrectPass();
+    var input = this.$("input"),
+        password = input.val();
+    input.attr("disabled","disabled").val(null).blur();
+    this.showPasswordLabel();
+    this.verifyingPassword();
+    // For suspense we want to ensure it takes at least Pi/2 seconds to verify
+    setTimeout(_.bind(function() {
+      $.ajax({
+        url: "/authorise",
+        type: "POST",
+        data: {password:password},
+        context: this,
+        statusCode: {
+          200: function() { this.unlock(); },
+          401: function() { this.incorrectPassword(); }
+        }
+      });
+    }, this), Math.floor(Math.PI/2 * 1000));
   },
   currentPassword: function() {
     return this.$("input").val();
   },
-  unlock: function() {
-    soundManager.play('success');
-    this.$("input").blur();
-    this.trigger("unlocked");
+  verifyingPassword: function() {
+    $(this.el).addClass("verifying");
+    this.$("label").text("Verifying...");
   },
-  incorrectPass: function() {
-    soundManager.play('error');
+  unlock: function() {
+    $(this.el).removeClass("verifying").addClass("success");
+    this.setLabel("Authorised");
+    Rubpocalypse.Sounds.success.play();
+    setTimeout(_.bind(function() {
+      this.trigger("unlocked");
+    }, this), 650);
+  },
+  incorrectPassword: function() {
+    $(this.el).removeClass("verifying").addClass("error");
+    this.setLabel("Access denied");
+    Rubpocalypse.Sounds.error.play();
+    setTimeout(_.bind(function() {
+      $(this.el).removeClass("error");
+      this.$("input").removeAttr("disabled");
+      this.setLabel(null);
+      this.showPasswordLabel();
+    }, this), 1500);
+  },
+  setLabel: function(label) {
+    this.$("label").text(label ? label : "Passphrase");
   }
 });
