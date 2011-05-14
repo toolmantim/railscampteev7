@@ -10,8 +10,8 @@ end
 
 post "/authorise" do
   params[:password] == ENV["SECRET_PASSWORD"] ?
-    [200,"Ok"] :
-    [401,"ACCESS DENIED, FOOL!"]
+    [200,"You're in!"] :
+    [401,"WHO YOU HACKIN FOOL?!"]
 end
 
 run Sinatra::Application
