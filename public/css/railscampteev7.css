@@ -437,10 +437,10 @@ table {
   position: relative;
 }
 #order-form > .airlock.unlocked .gate form {
-  -webkit-transition: all 200ms;
-  -moz-transition: all 200ms;
-  -o-transition: all 200ms;
-  transition: all 200ms;
+  -webkit-transition: all 250ms ease-out;
+  -moz-transition: all 250ms ease-out;
+  -o-transition: all 250ms ease-out;
+  transition: all 250ms ease-out;
   -webkit-transform: scale(1, 0);
   -moz-transform: scale(1, 0);
   -o-transform: scale(1, 0);
@@ -459,10 +459,11 @@ table {
   -moz-transform: scale(1, 1);
   -o-transform: scale(1, 1);
   transform: scale(1, 1);
-  -webkit-transition: all 150ms;
-  -moz-transition: all 150ms;
-  -o-transition: all 150ms;
-  transition: all 150ms;
+  opacity: 1;
+  -webkit-transition: all 180ms ease-in;
+  -moz-transition: all 180ms ease-in;
+  -o-transition: all 180ms ease-in;
+  transition: all 180ms ease-in;
   -webkit-transition-delay: 700ms;
   -moz-transition-delay: 700ms;
   -o-transition-delay: 700ms;
@@ -644,6 +645,7 @@ table {
   border-radius: 20px;
   padding: 18px 20px 0 20px;
   text-align: left;
+  opacity: 0;
 }
 #order-form > .airlock .form form header {
   text-transform: uppercase;
@@ -678,10 +680,21 @@ table {
   overflow: hidden;
   display: block;
   float: left;
+  cursor: pointer;
 }
 #order-form > .airlock .form form fieldset.cut label + label,
 #order-form > .airlock .form form fieldset.size label + label {
   margin-left: -2px;
+}
+#order-form > .airlock .form form fieldset.cut label:first-of-type span,
+#order-form > .airlock .form form fieldset.size label:first-of-type span {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#order-form > .airlock .form form fieldset.cut label:last-of-type span,
+#order-form > .airlock .form form fieldset.size label:last-of-type span {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 #order-form > .airlock .form form fieldset.cut label input,
 #order-form > .airlock .form form fieldset.size label input {
@@ -703,22 +716,30 @@ table {
   background-color: #134869;
 }
 #order-form > .airlock .form form fieldset.cut label span {
+  background: #134869 url("/images/cut-icons.png") 0 0 no-repeat;
   text-indent: -1000px;
 }
+#order-form > .airlock .form form fieldset.cut label input[value="f"] + span {
+  background-position: 22px 18px;
+}
+#order-form > .airlock .form form fieldset.cut label input[value="m"] + span {
+  background-position: 22px -82px;
+}
 #order-form > .airlock .form form fieldset.size {
-  margin-left: 15px;
+  margin-left: 19px;
 }
 #order-form > .airlock .form form fieldset.size label span {
   line-height: 76px;
   text-align: center;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
 }
 #order-form > .airlock .form form fieldset.personal h1 {
   display: none;
 }
 #order-form > .airlock .form form fieldset.personal label {
   position: relative;
+  cursor: text;
 }
 #order-form > .airlock .form form fieldset.personal label + label {
   margin-left: 15px;
@@ -728,10 +749,10 @@ table {
   top: 13px;
   left: 12px;
   text-transform: uppercase;
-  font: 15px/1 "ff-din-round-web-1", "ff-din-round-web-2";
+  font: 14px/1 "ff-din-round-web-1", "ff-din-round-web-2";
 }
 #order-form > .airlock .form form fieldset.personal label input {
-  width: 220px;
+  width: 240px;
 }
 #order-form > .airlock .form form fieldset.submit input {
   position: absolute;
