@@ -39,7 +39,7 @@ Rubpocalypse.Views.Gate = Backbone.View.extend({
   },
   verifyingPassword: function() {
     $(this.el).addClass("verifying");
-    this.$("label").text("Verifying...");
+    this.$("label").text("Verifying");
   },
   unlock: function() {
     $(this.el).removeClass("verifying").addClass("success");
