@@ -16,5 +16,5 @@ function autoFill() {
 
 $(function() {
   new Rubpocalypse.Views.Order({el:$("#order")});
-  // autoFill();
+  autoFill();
 });

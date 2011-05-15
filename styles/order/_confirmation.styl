@@ -1,0 +1,18 @@
+#order > .airlock > .confirmation
+  position absolute
+  height 100%
+  width 100%
+  transform translateZ(0) scale(1,0)
+  transition all 100ms
+  &.visible
+    transform translateZ(0) scale(1,1)
+  h1
+    position absolute
+    width 100%
+    height 100%
+    text-align center
+    font 30px $din-rounded
+    line-height 390px
+    text-shadow 0 0 15px rgba($cyan, .7)
+    text-transform uppercase
+    color $cyan

@@ -79,6 +79,7 @@ Rubpocalypse.Views.Form = Backbone.View.extend({
   transmissionComplete: function() {
     Rubpocalypse.Utils.delayedForSuspense(_.bind(function() {
       $(this.el).removeClass("visible");
+      this.trigger("complete");
     }, this));
   }
 });
