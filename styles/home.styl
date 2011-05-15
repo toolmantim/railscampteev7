@@ -1,8 +1,3 @@
-@import "reset"
-@import "fonts"
-
-$intro-duration = 1000
-
 $cyan = #00c0ff
 $input-background-color = #134869
 $input-background-color-active = #0c729d
@@ -38,13 +33,22 @@ box-shadow()
   -webkit-box-shadow arguments
   -moz-box-shadow arguments
 
-@import "intro"
+@import "_reset"
+@import "_fonts"
+@import "_intro"
+@import "_order"
 
-// Disable for now
-#intro
-  display none
-
-@import "order-form"
+input[type='text']
+  outline none
+  border 2px solid $cyan
+  background $input-background-color
+  font 14px $din-rounded
+  border-radius 5px
+  color white
+  line-height 1
+  padding 5px 8px
+  &::-webkit-input-placeholder
+    color white
 
 html, body
   min-height 100%
@@ -64,15 +68,3 @@ body
   background-repeat repeat, repeat, repeat, repeat, no-repeat
   background-position 90px 0, 50px 0, 40px 0, 0 0, top left
   background-size 145px 145px, 115px 115px, 95px 95px, 85px 85px, auto auto
-
-input[type='text']
-  outline none
-  border 2px solid $cyan
-  background $input-background-color
-  font 14px $din-rounded
-  border-radius 5px
-  color white
-  line-height 1
-  padding 5px 8px
-  &::-webkit-input-placeholder
-    color white

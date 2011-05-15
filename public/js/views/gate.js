@@ -1,38 +1,3 @@
-Rubpocalypse = {
-  Sounds: {},
-  Views: {}
-};
-
-$(function() {
-  new Rubpocalypse.Views.Order({el:$("#order-form")});
-  
-  // var f = $(".gate form");
-  // f.find("input").val("sekrit");
-  // f.submit();
-});
-
-// We want document ready, to push these file loads to the back of the queue
-$(document).ready(function() {
-  audiojs.events.ready(function() {
-    _.each(["success", "error"], function(s) {
-      var elem = document.createElement("audio");
-      elem.preload = true;
-      elem.loop = false;
-      elem.src = "/sounds/" + s + ".mp3";
-      $("body").append(elem);
-      Rubpocalypse.Sounds[s] = audiojs.create(elem, {createPlayer: false, css: false});
-    });
-  });
-});
-
-Rubpocalypse.Views.Order = Backbone.View.extend({
-  initialize: function() {
-    var airlock = this.$(".airlock"),
-        gateView = new Rubpocalypse.Views.Gate({el:airlock.find(".gate")});
-    gateView.bind("unlocked", function() { airlock.addClass("unlocked"); });
-  }
-});
-
 Rubpocalypse.Views.Gate = Backbone.View.extend({
   events: {
     "blur input": "showPasswordLabel",
@@ -81,6 +46,7 @@ Rubpocalypse.Views.Gate = Backbone.View.extend({
     this.setLabel("Authorised");
     Rubpocalypse.Sounds.success.play();
     setTimeout(_.bind(function() {
+      $(this.el).addClass("unlocked");
       this.trigger("unlocked");
     }, this), 650);
   },

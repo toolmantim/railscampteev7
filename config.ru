@@ -1,8 +1,13 @@
 require "sinatra"
 require "haml"
 
-set(:haml, :format => :html5)
-set(:views) { root }
+set :haml, :format => :html5
+
+helpers do
+  def partial(name)
+    haml :"_#{name}", :layout => false
+  end
+end
 
 get "/" do
   haml :home

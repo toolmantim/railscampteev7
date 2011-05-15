@@ -1,4 +1,4 @@
-#order-form
+#order
   color white
   width 768px
   margin 50px auto
@@ -46,25 +46,18 @@
   > .airlock
     height 390px
     position relative
-    &.unlocked
-      .gate
+
+    .gate
+      width 100%
+      height 100%
+      position absolute
+      &.unlocked
         form
           transition all 250ms ease-out
           transform scale(1, 0)
         .top-door, .bottom-door
           transition height 600ms 180ms
           height 0%
-      .form
-        form
-          transform scale(1,1)
-          opacity 1
-          transition all 180ms ease-in
-          transition-delay 700ms
-        
-    .gate
-      width 100%
-      height 100%
-      position absolute
       .top-door, .bottom-door
         position absolute
         left 0
@@ -158,12 +151,20 @@
           
       h2
         offscreen()
+    
     .form
       position absolute
       background-image -webkit-gradient(linear, 0 0, 0 100%, color-stop(.33, rgba($cyan,.13)), color-stop(.33, transparent), to(transparent))
       background-size 3px 3px
       height 100%
       width 100%
+      &.visible
+        form
+          transform scale(1,1)
+          opacity 1
+          transition all 180ms ease-in
+          transition-delay 700ms
+      
       form
         position absolute
         top 60px
@@ -242,19 +243,10 @@
           &.personal
             h1
               offscreen()
-            label
-              position relative
-              cursor text
-              & + label
-                margin-left 15px
-              span
-                position absolute
-                top 13px
-                left 12px
-                text-transform uppercase
-                font 14px/1 $din-rounded
-              input
-                width 240px
+            input
+              width 240px
+              &[name='name']
+                margin-right 15px
           &.submit
             input
               position absolute
@@ -275,6 +267,8 @@
               border-bottom-left-radius 20px
               border-bottom-right-radius 20px
               cursor pointer
+              &:disabled
+                color rgba($cyan, .2)
       
   > footer
     border-top 2px solid $cyan
