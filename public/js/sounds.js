@@ -12,7 +12,7 @@ $(document).ready(function() {
   
   Rubpocalypse.Sounds = {
     success: createSound("/sounds/success.mp3"),
-    error: createSound("/sounds/success.mp3")
+    error: createSound("/sounds/error.mp3")
   };
   
 });

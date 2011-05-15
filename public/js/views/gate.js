@@ -15,39 +15,38 @@ Rubpocalypse.Views.Gate = Backbone.View.extend({
   },
   checkPassword: function(e) {
     e.preventDefault();
-    var input = this.$("input"),
-        password = input.val();
-    input.attr("disabled","disabled").val(null).blur();
+    // Do this before we disable the input
+    var password = this.password();
+    this.$("input").attr("disabled","disabled").val(null).blur();
     this.showPasswordLabel();
     this.verifyingPassword();
-    // For suspense we want to ensure it takes at least Pi/2 seconds to verify
-    setTimeout(_.bind(function() {
+    Rubpocalypse.Utils.delayedForSuspense(_.bind(function() {
       $.ajax({
         url: this.$("form").attr("action"),
         type: this.$("form").attr("method"),
         data: {password:password},
         context: this,
         statusCode: {
-          200: function() { this.unlock(); },
+          200: function() { this.unlock(password); },
           401: function() { this.incorrectPassword(); }
         }
       });
-    }, this), Math.floor(Math.PI/2 * 1000));
+    }, this));
   },
-  currentPassword: function() {
+  password: function() {
     return this.$("input").val();
   },
   verifyingPassword: function() {
     $(this.el).addClass("verifying");
     this.$("label").text("Verifying");
   },
-  unlock: function() {
+  unlock: function(password) {
     $(this.el).removeClass("verifying").addClass("success");
     this.setLabel("Authorised");
     Rubpocalypse.Sounds.success.play();
     setTimeout(_.bind(function() {
       $(this.el).addClass("unlocked");
-      this.trigger("unlocked");
+      this.trigger("unlocked", password);
     }, this), 650);
   },
   incorrectPassword: function() {

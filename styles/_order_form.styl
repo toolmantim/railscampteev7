@@ -6,11 +6,8 @@
   width 100%
   &.visible
     form
-      transform scale(1,1)
+      transform translateZ(0) scale(1,1)
       opacity 1
-      transition all 180ms ease-in
-      transition-delay 700ms
-
   form
     position absolute
     top 60px
@@ -20,11 +17,12 @@
     background-color rgba($cyan,.3)
     border 1px solid $cyan
     box-shadow 0 0 15px rgba($cyan, .3)
-    transform scale(1,0)
+    transform translateZ(0) scale(1,0)
     border-radius 20px
     padding 18px 20px 0 20px
     text-align left
-    opacity 0
+    opacity .35
+    transition all 200ms ease-in
     header
       text-transform uppercase
       font-size 12px
@@ -41,13 +39,12 @@
         margin-top 10px
         margin-bottom 15px
         display inline-block
-        h1
+        h2
           offscreen()
         label
           overflow hidden
           display block
           float left
-          cursor pointer
           & + label
             margin-left -2px
           &:first-of-type span
@@ -62,6 +59,8 @@
             z-index -1
             &:checked + span
               background-color $input-background-color-active
+            &:disabled + span
+              opacity .4
           span
             height 76px
             width 62px
@@ -69,15 +68,16 @@
             display block
             border 2px solid $cyan
             background-color $input-background-color
+            transition opacity 100ms
       &.cut
         label
           span
             background $input-background-color url('/images/cut-icons.png') 0 0 no-repeat
             text-indent -1000px
           input[value='f'] + span
-            background-position 22px 18px
-          input[value='m'] + span
             background-position 22px -82px
+          input[value='m'] + span
+            background-position 22px 18px
       &.size
         margin-left 19px
         label
@@ -87,12 +87,17 @@
             color white
             font-size 14px
       &.personal
-        h1
+        h2
           offscreen()
         input
           width 240px
+          transition opacity 100ms
           &[name='name']
             margin-right 15px
+          &:disabled
+            opacity .4
+            color white
+            -webkit-text-fill-color white
       &.submit
         input
           position absolute
@@ -113,6 +118,7 @@
           border-bottom-left-radius 20px
           border-bottom-right-radius 20px
           cursor pointer
-          transition color 200ms
+          transition opacity 200ms
           &:disabled
-            color rgba($cyan, .2)
+            opacity .4
+            cursor default

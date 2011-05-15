@@ -5,6 +5,8 @@ Rubpocalypse.Views.Order = Backbone.View.extend({
     var gateView = new Rubpocalypse.Views.Gate({el:airlock.find("> .gate")}),
         formView = new Rubpocalypse.Views.Form({el:airlock.find("> .form")});
     
-    gateView.bind("unlocked", function() { formView.show(); });
+    gateView.bind("unlocked", function(password) {
+      setTimeout(function() { formView.show(password); }, 700);
+    });
   }
 });

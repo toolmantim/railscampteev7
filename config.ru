@@ -7,6 +7,9 @@ helpers do
   def partial(name)
     haml :"_#{name}", :layout => false
   end
+  def verify_password!
+    halt([401, "WHO YOU HACKIN FOOL?!"]) if params[:password] != ENV["SECRET_PASSWORD"]
+  end
 end
 
 get "/" do
@@ -14,9 +17,13 @@ get "/" do
 end
 
 post "/authorise" do
-  params[:password] == ENV["SECRET_PASSWORD"] ?
-    [200,"You're in!"] :
-    [401,"WHO YOU HACKIN FOOL?!"]
+  verify_password!
+  [200, "You're in!"]
+end
+
+post "/order" do
+  verify_password!
+  [200, "Order complete."]
 end
 
 run Sinatra::Application

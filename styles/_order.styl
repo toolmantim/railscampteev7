@@ -10,12 +10,10 @@
   text-align center
   
   a
-    color #bce1ed
+    color $light-cyan
     text-decoration none
-    &:hover
-      color #72dcff
-    &:active
-      color #00c0ff
+    &:hover, &:active
+      color #bce1ed
 
   > header
     padding-top 50px
@@ -37,11 +35,13 @@
         width 64px
         height 68px
         position absolute
-        top -25px
-        right -85px
+        top -18px
+        right -82px
     h2
       margin-top 15px
-      font-size 16px
+      text-transform uppercase
+      color $light-cyan
+      font-size 13px
     
   > .airlock
     height 390px
@@ -62,6 +62,7 @@
       h1
         font-size 11px
         margin-bottom 5px
+        color white
       p
         font-size 18px
         
