@@ -1,16 +1,39 @@
-Railscamp Tee v7 - the RUBPOCALYPSE
+______ _   _____________ _____ _____   ___   _   __   _______  _____ _____ 
+| ___ \ | | | ___ \ ___ \  _  /  __ \ / _ \ | |  \ \ / / ___ \/  ___|  ___|
+| |_/ / | | | |_/ / |_/ / | | | /  \// /_\ \| |   \ V /| |_/ /\ `--.| |__  
+|    /| | | | ___ \  __/| | | | |    |  _  || |    \ / |  __/  `--. \  __| 
+| |\ \| |_| | |_/ / |   \ \_/ / \__/\| | | || |____| | | |    /\__/ / |___ 
+\_| \_|\___/\____/\_|    \___/ \____/\_| |_/\_____/\_/ \_|    \____/\____/
 
-For production all you need is:
-  - Ruby 1.8+
-  - bundler (gem install bundler)
-  - a rack-enabled web server (like Heroku)
+           ~ Loving designed & built for RC9 by @toolmantim ~
 
-For dev:
-  - thin (gem install thin)
-  - stylus (npm install stylus)
+Don't fret if you don't know the secret password! You'll just have to wait
+a few days until we have the orders then I'll post an update to Twitter
+with it and you can all go nuts.
 
-Uses audio.js for HTML5 audio, Backbone & Underscore for some JS structure, a bunch of font-faces, and a whole lot of CSS3.
+This little site was built exclusively for the discerning internet user. It
+assumes you're using a modern browser such as Chrome, Safari, Opera or IE9.
 
-Add ?autofill to the URL to skip the intro and run through the order process automagically. Very useful for tuning animations and testing.
+If you want to pop the hood mosy over to:
+http://github.com/toolmantim/railscamptee-v7
 
-TODO: Add license information
+There you'll find some jQuery, Backbone, Modernizr, Sinatra, HAML, HTML5,
+Stylus, and plenty of CSS3.
+
+FF Din Rounded is the champion typeface (served via typekit), Strangelove
+features in the Pablo-Ferro-esque titles, and Killer Elephant gives the
+logo it's oomph. These all cost money, I used my own moola, so please
+don't steal them. That would be extremely lame.
+
+For the best experience across the widest range of browsers I've tried to
+stick with transitions for the main ordering interface, and used animations
+exclusively for the intro.
+
+The only images in the whole site are the tee graphics, and that damned
+sky. I did a purely CSS-gradient version of the sky (every star was a radial
+gradient) but it hosed every single browser.
+
+Muchos gracias to @waferbaby for being awesome, and helping out with the
+tee illustration!
+
+Everything in the entire site is MIT licensed (see http://github.com/toolmantim/railscamptee-v7/LICENSE), do what you like with it, except for the content in /fonts whose contains is copyright MyFonts.

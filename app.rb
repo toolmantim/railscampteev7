@@ -44,6 +44,9 @@ helpers do
       /js/home.js
     ).map {|p| asset_path(p) }
   end
+  def readme
+    File.read(File.join(settings.root, "Readme"))
+  end
 end
 
 get "/" do
