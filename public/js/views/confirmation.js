@@ -11,8 +11,13 @@ Rubpocalypse.Views.Confirmation = Backbone.View.extend({
     });
   },
   loadPBJ: function(callback) {
-    $("<img id='pbj'>")
+    $("<img id='pbj'/>")
       .load(function() { callback($(this)); })
+      .click(function() {
+        window.location = Math.random() < 0.5 ?
+                          "http://bit.ly/hBfjES" :
+                          "http://bit.ly/9RtLYA";
+      })
       .attr("src", "/images/pjb-banana.gif");
   }
 });

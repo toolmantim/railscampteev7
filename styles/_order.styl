@@ -72,6 +72,19 @@
     top -90px
     right 28px
     transition top 250ms ease-in
+    cursor pointer
     &.boppin
       right 58px
       top -37px
+    &:hover
+      -webkit-animation jumpin 300ms infinite
+      
+@keyframes jumpin
+  from
+    -webkit-transform translateY(0)
+    -webkit-animation-timing-function ease-out
+  50%
+    -webkit-transform translateY(-8px)
+    -webkit-animation-timing-function ease-in
+  to
+    -webkit-transform translateY(0)
