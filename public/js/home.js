@@ -6,8 +6,14 @@ $(function() {
   }, false);
 
   if (window.location.search.match(/autofill/)) {
-    $("html").removeClass("cssanimations");
+    skipIntro();
     engageAutoFillRobot();
+  }
+  
+  $("html").click(function() { skipIntro(); });
+
+  function skipIntro() {
+    $("html").removeClass("intro-animating");
   }
 
   function engageAutoFillRobot() {
