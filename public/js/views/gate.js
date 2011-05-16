@@ -5,7 +5,7 @@ Rubpocalypse.Views.Gate = Backbone.View.extend({
     "submit form": "checkPassword"
   },
   initialize: function() {
-    if (this.$("input").is(":focus") || !this.passwordBlank()) hidePasswordLabel();
+    if (this.$("input").is(":focus") || !this.passwordBlank()) this.hidePasswordLabel();
   },
   hidePasswordLabel: function() {
     this.$("label").addClass("hidden");
