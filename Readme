@@ -43,7 +43,7 @@ full license at http://github.com/toolmantim/railscamptee-v7/LICENSE.
 ## Install instructions
 
 If you want to get it up and running on your machine, firsly make sure you
-have Ruby 1.8 or 1.9. After that:
+have Ruby 1.8 or 1.9, and then:
 
 $ gem install bundler
 $ git clone https://github.com/toolmantim/railscampteev7
