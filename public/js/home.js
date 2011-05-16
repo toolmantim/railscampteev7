@@ -1,7 +1,8 @@
 $(function() {
   new Rubpocalypse.Views.Order({el:$("#order")});
 
-  // engageAutoFillRobot();
+  if (window.location.search.match(/autofill/))
+    engageAutoFillRobot();
 
   function engageAutoFillRobot() {
     setTimeout(function() {

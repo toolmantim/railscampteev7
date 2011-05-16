@@ -11,4 +11,6 @@ For dev:
 
 Uses audio.js for HTML5 audio, Backbone & Underscore for some JS structure, a bunch of font-faces, and a whole lot of CSS3.
 
+Add ?autofill to the URL to skip the intro and run through the order process automagically. Very useful for tuning animations and testing.
+
 TODO: Add license information
