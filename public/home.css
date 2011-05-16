@@ -18,8 +18,14 @@ html.cssanimations.intro-animating #intro .ground{width:100%;height:150px;backgr
 html.cssanimations.intro-animating #intro .ground .dinos{width:510px;height:325px;background:transparent url("/images/dinos.png") no-repeat;position:absolute;left:5%;bottom:50px;z-index:3}
 html.cssanimations.intro-animating #intro .words{position:absolute;top:0;left:0;width:100%;height:100%;color:#fff;font-family:"StrangeloveText",georgia;}
 html.cssanimations.intro-animating #intro .words > *{display:block;position:absolute;text-align:center;top:45%;left:-1%;height:100%;width:100%;z-index:5}
-html.cssanimations.intro-animating #intro .words .sponsor{opacity:0;-webkit-animation:sponsor 30s 1 linear forwards;-webkit-transform:rotate(2deg);font-size:110px}
-html.cssanimations.intro-animating #intro .words .us{opacity:0;-webkit-animation:us 30s 1 linear forwards;-webkit-transform:rotate(2deg);font-size:90px;font-size:120px}
+html.cssanimations.intro-animating #intro .words .sponsor{opacity:0;-webkit-animation:sponsor 30s 1 linear forwards;-webkit-transform:rotate(2deg);margin-top:-150px;}
+html.cssanimations.intro-animating #intro .words .sponsor *{position:relative}
+html.cssanimations.intro-animating #intro .words .sponsor .support{font-size:85px}
+html.cssanimations.intro-animating #intro .words .sponsor .thoughtworks{display:block;top:-60px;font-size:220px;}
+html.cssanimations.intro-animating #intro .words .sponsor .thoughtworks .works{display:block;font-size:250px;top:-70px}
+html.cssanimations.intro-animating #intro .words .us{opacity:0;-webkit-animation:us 30s 1 linear forwards;-webkit-transform:rotate(2deg);margin-top:-500px;font-size:90px;font-size:180px;}
+html.cssanimations.intro-animating #intro .words .us .and{font-size:700px}
+html.cssanimations.intro-animating #intro .words .us .present{display:block;font-size:120px}
 html.cssanimations.intro-animating #intro .words .title{top:35%;opacity:0;-webkit-animation:title 30s 1 linear forwards;font:220px "KILLERELEPHANT","Helvetica Neue",helvetica,sans-serif;}
 html.cssanimations.intro-animating #intro .words .title .a{letter-spacing:10px}
 html.cssanimations.intro-animating #intro .words .title .l{letter-spacing:-30px}
@@ -114,7 +120,7 @@ html.cssanimations.intro-animating #intro .boom{position:absolute;width:100%;hei
 #order > .airlock > .gate form{position:relative;top:173px;width:200px;height:44px;margin:0 auto;z-index:2;}
 #order > .airlock > .gate form input,#order > .airlock > .gate form label{position:absolute;top:0;left:0;width:100%;text-align:center;padding:5px 10px;font-size:18px}
 #order > .airlock > .gate form input{z-index:3}
-#order > .airlock > .gate form label{position:absolute;top:10px;left:0;z-index:4;text-transform:uppercase;line-height:1;-webkit-transition:all 50ms;-moz-transition:all 50ms;-o-transition:all 50ms;transition:all 50ms;}
+#order > .airlock > .gate form label{position:absolute;top:10px;left:0;z-index:4;text-transform:uppercase;line-height:1;-webkit-transition:transform 50ms;-moz-transition:transform 50ms;-o-transition:transform 50ms;transition:transform 50ms;-webkit-transition:-webkit-transform 50ms;-moz-transition:-moz-transform 50ms;-o-transition:-o-transform 50ms;}
 #order > .airlock > .gate form label.hidden{-webkit-transform:scale(0,1);-moz-transform:scale(0,1);-o-transform:scale(0,1);transform:scale(0,1)}
 #order > .airlock > .gate form .wheel-outer,#order > .airlock > .gate form .wheel-inner{position:absolute;background:-webkit-gradient(linear,0 0,0 100%,color-stop(.33,rgba(0,192,255,0.4)),color-stop(.33,transparent),to(transparent)),#0e5a81;background:-webkit-linear-gradient(top,rgba(0,192,255,0.4) 33%,transparent 33%,transparent),#0e5a81;background:-moz-linear-gradient(top,rgba(0,192,255,0.4) 33%,transparent 33%,transparent),#0e5a81;background:-o-linear-gradient(top,rgba(0,192,255,0.4) 33%,transparent 33%,transparent),#0e5a81;background:linear-gradient(top,rgba(0,192,255,0.4) 33%,transparent 33%,transparent),#0e5a81;border:2px solid #00c0ff}
 #order > .airlock > .gate form .wheel-outer{-webkit-background-size:11px 11px,auto auto;-moz-background-size:11px 11px,auto auto;-o-background-size:11px 11px,auto auto;background-size:11px 11px,auto auto;width:80px;height:80px;border-radius:49px;top:-19px;left:70px;-webkit-transform:rotate(0);-moz-transform:rotate(0);-o-transform:rotate(0);transform:rotate(0)}
@@ -162,5 +168,5 @@ html.cssanimations.intro-animating #intro .boom{position:absolute;width:100%;hei
 input[type="text"]::-webkit-input-placeholder{color:#fff}
 html,body{min-height:100%}
 html.cssanimations.intro-animating,html.cssanimations.intro-animating body{height:100%}
-html.cssanimations.intro-animating body{position:absolute;overflow:hidden}
+html.cssanimations.intro-animating body{overflow:hidden}
 body{background-image:url("/images/sky1.png"),url("/images/sky2.png"),url("/images/sky3.png"),url("/images/sky4.png"),-webkit-gradient(linear,left top,left bottom,color-stop(0,#00162f),color-stop(1,#004763));background-image:url("/images/sky1.png"),url("/images/sky2.png"),url("/images/sky3.png"),url("/images/sky4.png"),-webkit-linear-gradient(top left,#00162f,#004763);background-image:url("/images/sky1.png"),url("/images/sky2.png"),url("/images/sky3.png"),url("/images/sky4.png"),-moz-linear-gradient(top left,#00162f,#004763);background-image:url("/images/sky1.png"),url("/images/sky2.png"),url("/images/sky3.png"),url("/images/sky4.png"),-o-linear-gradient(top left,#00162f,#004763);background-image:url("/images/sky1.png"),url("/images/sky2.png"),url("/images/sky3.png"),url("/images/sky4.png"),linear-gradient(top left,#00162f,#004763);background-repeat:repeat,repeat,repeat,repeat,no-repeat;background-position:90px 0,50px 0,40px 0,0 0,top left;-webkit-background-size:145px 145px,115px 115px,95px 95px,85px 85px,auto auto;-moz-background-size:145px 145px,115px 115px,95px 95px,85px 85px,auto auto;-o-background-size:145px 145px,115px 115px,95px 95px,85px 85px,auto auto;background-size:145px 145px,115px 115px,95px 95px,85px 85px,auto auto}

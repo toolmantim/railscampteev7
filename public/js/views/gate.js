@@ -53,7 +53,7 @@ Rubpocalypse.Views.Gate = Backbone.View.extend({
     }, this), 650);
   },
   incorrectPassword: function() {
-    $(this.el).removeClass("verifying").addClass("error");
+    $(this.el).removeClass("verifying").addClass("error")
     this.setLabel("Access denied");
     Rubpocalypse.Sounds.error.play();
     setTimeout(_.bind(function() {

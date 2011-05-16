@@ -46,7 +46,10 @@
       z-index 4
       text-transform uppercase
       line-height 1
-      transition all 50ms
+      transition transform 50ms
+      -webkit-transition -webkit-transform 50ms
+      -moz-transition -moz-transform 50ms
+      -o-transition -o-transform 50ms
       &.hidden
         transform scale(0,1)
     .wheel-outer, .wheel-inner
