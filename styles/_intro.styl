@@ -1,20 +1,20 @@
-$intro-duration = 1000
-
-// Disable for now
-#intro
-  display none
+$intro-duration = 30
 
 time(percent)
   '%ss' % ($intro-duration * percent)
 
 #intro
+  display none
+
+html.cssanimations.intro-animating #intro
+  display block
   background -webkit-gradient(linear, left top, left bottom, color-stop(0, #00162f), color-stop(1, #004763)) no-repeat
   position absolute
   top 0
   left 0
   width 200%
   height 200%
-  -webkit-animation zoomie time(.67) 1 linear forwards, fade-out 5s time(.671) 1 linear forwards
+  -webkit-animation zoomie time(.67) 1 linear forwards, fade-out-intro 5s time(.671) 1 linear forwards
   .stars-1, .stars-2, .stars-3, .stars-4
     position absolute
     top 0
@@ -110,16 +110,16 @@ time(percent)
     height 100%
     z-index 6
     background-color white
-    -webkit-animation fade-in 250ms time(.64) linear forwards
+    -webkit-animation fade-in-boom 250ms time(.64) linear forwards
     opacity 0
 
-@keyframes fade-in
+@keyframes fade-in-boom
   from
     opacity 0
   to
     opacity 1
 
-@keyframes fade-out
+@keyframes fade-out-intro
   from
     opacity 1
   to

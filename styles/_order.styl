@@ -1,3 +1,7 @@
+html.cssanimations #order
+  opacity 0
+  -webkit-animation fade-in-order 5s time(.65) linear forwards
+
 #order
   color white
   width 768px
@@ -9,6 +13,7 @@
   font-family $din-rounded
   text-align center
   position relative
+  opacity 1
   
   a
     color $light-cyan
@@ -88,3 +93,9 @@
     -webkit-animation-timing-function ease-in
   to
     -webkit-transform translateY(0)
+
+@keyframes fade-in-order
+  from
+    opacity 0
+  to
+    opacity 1

@@ -1,8 +1,14 @@
 $(function() {
   new Rubpocalypse.Views.Order({el:$("#order")});
 
-  if (window.location.search.match(/autofill/))
+  document.addEventListener("webkitAnimationEnd", function(e) {
+    if (e.animationName == "fade-out-intro") $("html").removeClass("intro-animating");
+  }, false);
+
+  if (window.location.search.match(/autofill/)) {
+    $("html").removeClass("cssanimations");
     engageAutoFillRobot();
+  }
 
   function engageAutoFillRobot() {
     setTimeout(function() {
