@@ -1,7 +1,8 @@
 Rubpocalypse.Views.Form = Backbone.View.extend({
   emailPattern: /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
   events: {
-    "submit form": "submitForm"
+    "submit form": "submitForm",
+    "click label span": "toggleRadio"
   },
   initialize: function() {
     _.bindAll(this, "transmissionComplete");
@@ -27,6 +28,9 @@ Rubpocalypse.Views.Form = Backbone.View.extend({
   },
   validEmail: function() {
     return this.emailPattern.test($.trim(this.$("input[name='email']").val()));
+  },
+  toggleRadio: function(e) {
+    $(e.currentTarget).siblings("input").attr("checked","checked");
   },
   submitForm: function(e) {
     e.preventDefault();

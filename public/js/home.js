@@ -5,16 +5,16 @@ $(function() {
     if (e.animationName == "fade-out-intro") $("html").removeClass("intro-animating");
   }, false);
 
-  if (window.location.search.match(/autofill/)) {
-    skipIntro();
-    engageAutoFillRobot();
-  }
-  
-  $("html").click(function() { skipIntro(); });
-
   function skipIntro() {
     $("html").removeClass("intro-animating");
   }
+
+  $("html").click(function() { skipIntro(); });
+
+  // Make everything in the intro clickable for lil ol Mobile Safari
+  $("#intro, #intro *").each(function() {
+    this.onclick = function() {};
+  });
 
   function engageAutoFillRobot() {
     setTimeout(function() {
@@ -30,6 +30,11 @@ $(function() {
       f.find("input[name='email']").val("holy@jesus.com");
       f.submit();
     }, 4000);
+  }
+  
+  if (window.location.search.match(/autofill/)) {
+    skipIntro();
+    engageAutoFillRobot();
   }
   
 });
