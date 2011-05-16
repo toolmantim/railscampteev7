@@ -15,9 +15,8 @@
     %meta(name="viewport" content="width=1024, initial-scale=1.0, minimum-scale=1.0")
   %body
     - [["crickets", true], ["fireball", false], ["explosion", false], ["success", false], ["error", false]].each do |(f,auto)|
-      %audio{:preload => "auto", :id => "#{f}-sound", :autoplay => auto}
+      %audio{:preload => "auto", :id => "#{f}-sound", :autoplay => auto, :src => "/sounds/#{f}.mp3"}
         %source{:type => "audio/ogg", :src => "/sounds/#{f}.ogg"}/
-        %source{:type => "audio/mp3", :src => "/sounds/#{f}.mp3"}/
     = partial :intro
     = partial :order
     %script
