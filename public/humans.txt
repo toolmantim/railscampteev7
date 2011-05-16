@@ -1,0 +1,5 @@
+This website was built in the aftermath of a massive space-flung ruby smashing
+into the face of the planet and destroying all life, save for a single web
+developer and his little laptop.
+
+This is his story.
