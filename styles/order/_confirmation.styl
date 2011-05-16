@@ -11,6 +11,8 @@
   transition all 100ms
   &.visible
     transform scale(1,1)
+    .tee-1, .tee-2
+      opacity 1
   > *
     position absolute
   hgroup, p
@@ -28,6 +30,8 @@
     font-size 12px
     width 22em
   .tee-1, .tee-2
+    opacity 0
+    transition opacity 250ms 500ms
     bottom 0
     right 40px
     width 404px

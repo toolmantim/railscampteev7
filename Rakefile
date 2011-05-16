@@ -15,3 +15,6 @@ desc "Livereload the CSS files"
 task :livereload do
   exec "guard"
 end
+
+require "./app"
+require "sinatra/activerecord/rake"
