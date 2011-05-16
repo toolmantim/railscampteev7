@@ -1,11 +1,25 @@
 $(function() {
   new Rubpocalypse.Views.Order({el:$("#order")});
 
+  document.addEventListener("webkitAnimationStart", function(e) {
+    switch (e.animationName) {
+      case "comet": 
+        Rubpocalypse.Sounds.fireball.play();
+        setTimeout(function() { Rubpocalypse.Sounds.explosion.play(); }, 1100);
+        break;
+      case "fade-out-intro":
+        Rubpocalypse.Sounds.crickets.pause();
+        break;
+    }
+  });
+
   document.addEventListener("webkitAnimationEnd", function(e) {
-    if (e.animationName == "fade-out-intro") $("html").removeClass("intro-animating");
+    if (e.animationName == "fade-out-intro")
+      $("html").removeClass("intro-animating");
   }, false);
 
   function skipIntro() {
+    Rubpocalypse.Sounds.crickets.pause();
     $("html").removeClass("intro-animating");
   }
 
