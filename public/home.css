@@ -14,7 +14,7 @@ html.cssanimations.intro-animating #intro .stars-1{background-image:url("/images
 html.cssanimations.intro-animating #intro .stars-2{background-image:url("/images/sky2.png");background-position:50px 0}
 html.cssanimations.intro-animating #intro .stars-3{background-image:url("/images/sky3.png");background-position:40px 0}
 html.cssanimations.intro-animating #intro .stars-4{background-image:url("/images/sky4.png");background-position:0 0}
-html.cssanimations.intro-animating #intro .ground{width:100%;height:150px;background-color:#008000;position:absolute;bottom:0;z-index:2;}
+html.cssanimations.intro-animating #intro .ground{width:100%;height:150px;background-color:#008000;background-image:-webkit-gradient(linear,center bottom,center top,from(rgba(0,0,0,0.6)),color-stop(40%,rgba(0,0,0,0.6)),to(transparent)),url("/images/grass.jpg");position:absolute;bottom:0;z-index:2;}
 html.cssanimations.intro-animating #intro .ground .dinos{width:510px;height:325px;background:transparent url("/images/dinos.png") no-repeat;position:absolute;left:5%;bottom:50px;z-index:3}
 html.cssanimations.intro-animating #intro .words{position:absolute;top:0;left:0;width:100%;height:100%;color:#fff;font-family:"StrangeloveText",georgia;}
 html.cssanimations.intro-animating #intro .words > *{display:block;position:absolute;text-align:center;top:45%;left:-1%;height:100%;width:100%;z-index:5}
