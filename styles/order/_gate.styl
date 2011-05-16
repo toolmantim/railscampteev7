@@ -5,7 +5,7 @@
   &.unlocked
     form
       transition all 250ms ease-out
-      transform translateZ(0) scale(1, 0)
+      transform scale(1, 0)
     .top-door, .bottom-door
       transition height 500ms 180ms
       height 0%
@@ -48,7 +48,7 @@
       line-height 1
       transition all 50ms
       &.hidden
-        transform translateZ(0) scale(0,1)
+        transform scale(0,1)
     .wheel-outer, .wheel-inner
       position absolute
       background -webkit-gradient(linear, 0 0, 0 100%, color-stop(.33, rgba($cyan, .4)), color-stop(.33, transparent), to(transparent)), #0e5a81
@@ -64,7 +64,7 @@
       border-radius 49px
       top -19px
       left 70px
-      transform translateZ(0) rotate(0deg)
+      transform rotate(0deg)
     .wheel-inner
       background-size 11px 11px, auto auto
       width 58px
@@ -72,15 +72,15 @@
       border-radius 29px
       top -8px
       left 81px
-      transform translateZ(0) rotate(0deg)
+      transform rotate(0deg)
 
   &.verifying
     .wheel-inner, .wheel-outer
       transition all 10s linear
     .wheel-inner
-      transform translateZ(0) rotate(-405deg)
+      transform rotate(-405deg)
     .wheel-outer
-      transform translateZ(0) rotate(405deg)
+      transform rotate(405deg)
     label
       color $cyan
   &.error

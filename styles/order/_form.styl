@@ -1,12 +1,13 @@
 #order > .airlock > .form
   position absolute
   background-image -webkit-gradient(linear, 0 0, 0 100%, color-stop(.33, rgba($cyan,.13)), color-stop(.33, transparent), to(transparent))
+  background-image -moz-linear-gradient(top, 33% rgba($cyan,.13), 33% transparent)
   background-size 3px 3px
   height 100%
   width 100%
   &.visible
     form
-      transform translateZ(0) scale(1,1)
+      transform scale(1,1)
       opacity 1
   form
     position absolute
@@ -17,7 +18,7 @@
     background-color rgba($cyan,.3)
     border 1px solid $cyan
     box-shadow 0 0 15px rgba($cyan, .3)
-    transform translateZ(0) scale(1,0)
+    transform scale(1,0)
     border-radius 20px
     padding 18px 20px 0 20px
     text-align left

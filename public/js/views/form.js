@@ -90,6 +90,7 @@ Rubpocalypse.Views.Form = Backbone.View.extend({
     Rubpocalypse.Utils.delayedForSuspense(_.bind(function() {
       $(this.el).removeClass("visible");
       this.trigger("complete", number);
+      this.$("input").val("").removeAttr("checked").removeAttr("disabled");
     }, this));
   }
 });
