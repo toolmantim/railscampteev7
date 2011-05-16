@@ -143,16 +143,20 @@ html.cssanimations.intro-animating #intro .boom{position:absolute;width:100%;hei
 #order > .airlock > .confirmation .tee-1{-webkit-animation-name:fuzzy-transmission-1;-webkit-animation-duration:3.7s;-webkit-animation-delay:1.1s}
 #order > .airlock > .confirmation .tee-2{-webkit-mask-position-y:2px;-webkit-animation-name:fuzzy-transmission-2;-webkit-animation-duration:3.1s;-webkit-animation-delay:2.9s}
 @-webkit-keyframes fuzzy-transmission-1{0%{-webkit-transform:translateX(0)}
-5%{-webkit-transform:translateX(-2px)}
-7%{-webkit-transform:translateX(-2px)}
+5%{-webkit-transform:translateX(0)}
+6%{-webkit-transform:translateX(-2px)}
+37%{-webkit-transform:translateX(-2px)}
 38%{-webkit-transform:translateX(2px)}
 40%{-webkit-transform:translateX(2px)}
+41%{-webkit-transform:translateX(0)}
 100%{-webkit-transform:translateX(0)}
 }@-webkit-keyframes fuzzy-transmission-2{0%{-webkit-transform:translateX(0)}
+4%{-webkit-transform:translateX(0)}
 5%{-webkit-transform:translateX(-3px)}
-7%{-webkit-transform:translateX(-3px)}
+37%{-webkit-transform:translateX(-3px)}
 38%{-webkit-transform:translateX(3px)}
-40%{-webkit-transform:translateX(3px)}
+39%{-webkit-transform:translateX(3px)}
+40%{-webkit-transform:translateX(0)}
 100%{-webkit-transform:translateX(0)}
 }input[type="text"]{outline:none;border:2px solid #00c0ff;background:#134869;font:14px "ff-din-round-web-1","ff-din-round-web-2";border-radius:5px;color:#fff;line-height:1;padding:5px 8px;}
 input[type="text"]::-webkit-input-placeholder{color:#fff}
