@@ -3,7 +3,7 @@ $(function() {
   Rubpocalypse.Sounds = {};
 
   $("audio").each(function() {
-    Rubpocalypse.Sounds[$(this).id().replace("sound-","")] = this;
+    Rubpocalypse.Sounds[$(this).attr("id").replace("sound-","")] = this;
   });
 
 }());
