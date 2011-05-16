@@ -16,11 +16,11 @@ html.cssanimations.intro-animating #intro .stars-3{background-image:url("/images
 html.cssanimations.intro-animating #intro .stars-4{background-image:url("/images/sky4.png");background-position:0 0}
 html.cssanimations.intro-animating #intro .ground{width:100%;height:150px;background-color:#008000;position:absolute;bottom:0;z-index:2;}
 html.cssanimations.intro-animating #intro .ground .dinos{width:510px;height:325px;background:transparent url("/images/dinos.png") no-repeat;position:absolute;left:5%;bottom:50px;z-index:3}
-html.cssanimations.intro-animating #intro .words{position:absolute;top:0;left:0;width:100%;height:100%;color:#fff;font-family:"StrangeloveText";}
+html.cssanimations.intro-animating #intro .words{position:absolute;top:0;left:0;width:100%;height:100%;color:#fff;font-family:"StrangeloveText",georgia;}
 html.cssanimations.intro-animating #intro .words > *{display:block;position:absolute;text-align:center;top:45%;left:-1%;height:100%;width:100%;z-index:5}
 html.cssanimations.intro-animating #intro .words .sponsor{opacity:0;-webkit-animation:sponsor 30s 1 linear forwards;-webkit-transform:rotate(2deg);font-size:110px}
 html.cssanimations.intro-animating #intro .words .us{opacity:0;-webkit-animation:us 30s 1 linear forwards;-webkit-transform:rotate(2deg);font-size:90px;font-size:120px}
-html.cssanimations.intro-animating #intro .words .title{top:35%;opacity:0;-webkit-animation:title 30s 1 linear forwards;font:220px "KILLERELEPHANT";}
+html.cssanimations.intro-animating #intro .words .title{top:35%;opacity:0;-webkit-animation:title 30s 1 linear forwards;font:220px "KILLERELEPHANT","Helvetica Neue",helvetica,sans-serif;}
 html.cssanimations.intro-animating #intro .words .title .a{letter-spacing:10px}
 html.cssanimations.intro-animating #intro .words .title .l{letter-spacing:-30px}
 html.cssanimations.intro-animating #intro .comet-outer{position:absolute;width:100%;height:100%;-webkit-animation:comet 30s 1 linear forwards;}
@@ -55,11 +55,11 @@ html.cssanimations.intro-animating #intro .boom{position:absolute;width:100%;hei
 62%{-webkit-transform:translate3d(20%,110%,0)}
 100%{-webkit-transform:translate3d(20%,110%,0)}
 }html.cssanimations.intro-animating #order{opacity:0;-webkit-animation:fade-in-order 6s 20.55s linear forwards}
-#order{color:#fff;width:768px;margin:50px auto;border:2px solid #00c0ff;border-radius:50px;background-color:rgba(0,0,0,0.3);box-shadow:0 0 25px #00c0ff;-webkit-box-shadow:0 0 25px #00c0ff;-moz-box-shadow:0 0 25px #00c0ff;font-family:"ff-din-round-web-1","ff-din-round-web-2";text-align:center;position:relative;opacity:1;}
+#order{color:#fff;width:768px;margin:50px auto;border:2px solid #00c0ff;border-radius:50px;background-color:rgba(0,0,0,0.3);box-shadow:0 0 25px #00c0ff;-webkit-box-shadow:0 0 25px #00c0ff;-moz-box-shadow:0 0 25px #00c0ff;font-family:"ff-din-round-web-1","ff-din-round-web-2","Helvetica Neue",helvetica,sans-serif;text-align:center;position:relative;opacity:1;}
 #order a{color:#7cc2d9;text-decoration:none;}
 #order a:hover,#order a:active{color:#bce1ed}
 #order > header{padding-top:50px;padding-bottom:40px;border-bottom:2px solid #00c0ff;}
-#order > header h1{font:60px "KILLERELEPHANT";line-height:1;position:relative;display:inline-block;}
+#order > header h1{font:60px "KILLERELEPHANT","Helvetica Neue",helvetica,sans-serif;line-height:1;position:relative;display:inline-block;}
 #order > header h1 .a{letter-spacing:10px}
 #order > header h1 .l{letter-spacing:-30px}
 #order > header h1:after{content:" ";background:transparent url("/images/comet.png") 0 0 no-repeat;-webkit-background-size:64px 68px;-moz-background-size:64px 68px;-o-background-size:64px 68px;background-size:64px 68px;width:64px;height:68px;position:absolute;top:-18px;right:-82px}
@@ -103,7 +103,7 @@ html.cssanimations.intro-animating #intro .boom{position:absolute;width:100%;hei
 #order > .airlock > .form form fieldset.personal input{width:240px;-webkit-transition:opacity 100ms;-moz-transition:opacity 100ms;-o-transition:opacity 100ms;transition:opacity 100ms;}
 #order > .airlock > .form form fieldset.personal input[name="name"]{margin-right:15px}
 #order > .airlock > .form form fieldset.personal input:disabled{opacity:.4;color:#fff;-webkit-text-fill-color:#fff}
-#order > .airlock > .form form fieldset.submit input{position:absolute;margin:0;padding:15px 0;left:-1px;bottom:-1px;border:2px solid #00c0ff;background:#134869;font:18px "ff-din-round-web-1","ff-din-round-web-2";border-radius:5px;color:#fff;line-height:1;text-transform:uppercase;text-align:center;width:582px;border-radius:0;border-bottom-left-radius:20px;border-bottom-right-radius:20px;cursor:pointer;-webkit-transition:opacity 200ms;-moz-transition:opacity 200ms;-o-transition:opacity 200ms;transition:opacity 200ms;}
+#order > .airlock > .form form fieldset.submit input{position:absolute;margin:0;padding:15px 0;left:-1px;bottom:-1px;border:2px solid #00c0ff;background:#134869;font:18px "ff-din-round-web-1","ff-din-round-web-2","Helvetica Neue",helvetica,sans-serif;border-radius:5px;color:#fff;line-height:1;text-transform:uppercase;text-align:center;width:582px;border-radius:0;border-bottom-left-radius:20px;border-bottom-right-radius:20px;cursor:pointer;-webkit-transition:opacity 200ms;-moz-transition:opacity 200ms;-o-transition:opacity 200ms;transition:opacity 200ms;}
 #order > .airlock > .form form fieldset.submit input:disabled{opacity:.4;cursor:default}
 #order > .airlock > .gate{width:100%;height:100%;position:absolute;}
 #order > .airlock > .gate.unlocked form{-webkit-transition:all 250ms ease-out;-moz-transition:all 250ms ease-out;-o-transition:all 250ms ease-out;transition:all 250ms ease-out;-webkit-transform:scale(1,0);-moz-transform:scale(1,0);-o-transform:scale(1,0);transform:scale(1,0)}
@@ -158,9 +158,9 @@ html.cssanimations.intro-animating #intro .boom{position:absolute;width:100%;hei
 39%{-webkit-transform:translateX(3px)}
 40%{-webkit-transform:translateX(0)}
 100%{-webkit-transform:translateX(0)}
-}input[type="text"]{outline:none;border:2px solid #00c0ff;background:#134869;font:14px "ff-din-round-web-1","ff-din-round-web-2";border-radius:5px;color:#fff;line-height:1;padding:5px 8px;}
+}input[type="text"]{outline:none;border:2px solid #00c0ff;background:#134869;font:14px "ff-din-round-web-1","ff-din-round-web-2","Helvetica Neue",helvetica,sans-serif;border-radius:5px;color:#fff;line-height:1;padding:5px 8px;}
 input[type="text"]::-webkit-input-placeholder{color:#fff}
 html,body{min-height:100%}
 html.cssanimations.intro-animating,html.cssanimations.intro-animating body{height:100%}
-html.cssanimations.intro-animating body{overflow:hidden}
+html.cssanimations.intro-animating body{position:absolute;overflow:hidden}
 body{background-image:url("/images/sky1.png"),url("/images/sky2.png"),url("/images/sky3.png"),url("/images/sky4.png"),-webkit-gradient(linear,left top,left bottom,color-stop(0,#00162f),color-stop(1,#004763));background-image:url("/images/sky1.png"),url("/images/sky2.png"),url("/images/sky3.png"),url("/images/sky4.png"),-webkit-linear-gradient(top left,#00162f,#004763);background-image:url("/images/sky1.png"),url("/images/sky2.png"),url("/images/sky3.png"),url("/images/sky4.png"),-moz-linear-gradient(top left,#00162f,#004763);background-image:url("/images/sky1.png"),url("/images/sky2.png"),url("/images/sky3.png"),url("/images/sky4.png"),-o-linear-gradient(top left,#00162f,#004763);background-image:url("/images/sky1.png"),url("/images/sky2.png"),url("/images/sky3.png"),url("/images/sky4.png"),linear-gradient(top left,#00162f,#004763);background-repeat:repeat,repeat,repeat,repeat,no-repeat;background-position:90px 0,50px 0,40px 0,0 0,top left;-webkit-background-size:145px 145px,115px 115px,95px 95px,85px 85px,auto auto;-moz-background-size:145px 145px,115px 115px,95px 95px,85px 85px,auto auto;-o-background-size:145px 145px,115px 115px,95px 95px,85px 85px,auto auto;background-size:145px 145px,115px 115px,95px 95px,85px 85px,auto auto}
