@@ -1,3 +1,6 @@
+require "bundler"
+Bundler.setup
+
 task :default => :web
 
 desc "Boot it up"

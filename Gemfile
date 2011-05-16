@@ -5,6 +5,7 @@ gem 'haml'
 gem 'json'
 gem 'activerecord'
 gem 'sinatra-activerecord'
+gem 'sinatra-cache-assets'
 
 group :development do
   gem 'thin'

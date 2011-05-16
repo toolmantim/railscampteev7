@@ -2,8 +2,13 @@ require "sinatra"
 require "haml"
 require "json"
 require "sinatra/activerecord"
+require "sinatra/cache_assets"
 
 set :haml, :format => :html5
+
+use Sinatra::CacheAssets, :max_age => 86400*100 # 100 days
+
+set :asset_cache_token, ENV["COMMIT_HASH"] || Time.now.to_i.to_s
 
 class Order < ActiveRecord::Base
   validates_presence_of :name, :email, :cut, :size
@@ -21,6 +26,21 @@ helpers do
   def json(obj)
     content_type 'application/json'
     obj.to_json
+  end
+  def javascripts
+    %w(
+      /vendor/jquery.js
+      /vendor/underscore.js
+      /vendor/backbone.js
+      /vendor/audio.js
+      /js/rubpocalypse.js
+      /js/sounds.js
+      /js/views/form.js
+      /js/views/gate.js
+      /js/views/confirmation.js
+      /js/views/order.js
+      /js/home.js
+    ).map {|p| p + "?" + settings.asset_cache_token}
   end
 end
 
