@@ -21,7 +21,8 @@ helpers do
     haml :"_#{name}", :layout => false
   end
   def verify_password!
-    halt([401, "WHO YOU HACKIN FOOL?!"]) if params.delete("password") != ENV["SECRET_PASSWORD"]
+    halt([401, "WHO YOU HACKIN FOOL?!"]) if
+      !(p = params.delete("password")) || p.downcase != ENV["SECRET_PASSWORD"].downcase
   end
   def json(obj)
     content_type 'application/json'
