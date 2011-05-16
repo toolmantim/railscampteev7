@@ -44,8 +44,8 @@ helpers do
       /js/home.js
     ).map {|p| asset_path(p) }
   end
-  def readme
-    File.read(File.join(settings.root, "Readme"))
+  def readme_sans_install
+    File.read(File.join(settings.root, "Readme")).split("## Install instructions")[0]
   end
 end
 
