@@ -18,14 +18,17 @@ html.cssanimations.intro-animating #intro .ground{width:100%;height:150px;backgr
 html.cssanimations.intro-animating #intro .ground .dinos{width:510px;height:325px;background:transparent url("/images/dinos.png") no-repeat;position:absolute;left:5%;bottom:50px;z-index:3}
 html.cssanimations.intro-animating #intro .words{position:absolute;top:0;left:0;width:100%;height:100%;color:#fff;font-family:"StrangeloveText",georgia;}
 html.cssanimations.intro-animating #intro .words > *{display:block;position:absolute;text-align:center;top:45%;left:-1%;height:100%;width:100%;z-index:5}
-html.cssanimations.intro-animating #intro .words .sponsor{opacity:0;-webkit-animation:sponsor 30s 1 linear forwards;-webkit-transform:rotate(2deg);margin-top:-150px;}
+html.cssanimations.intro-animating #intro .words .sponsor{opacity:0;-webkit-animation:sponsor 30s 1 linear forwards;-webkit-transform:rotate(2deg);margin-top:-150px;margin-left:-25px;}
 html.cssanimations.intro-animating #intro .words .sponsor *{position:relative}
 html.cssanimations.intro-animating #intro .words .sponsor .support{font-size:85px}
 html.cssanimations.intro-animating #intro .words .sponsor .thoughtworks{display:block;top:-60px;font-size:220px;}
 html.cssanimations.intro-animating #intro .words .sponsor .thoughtworks .works{display:block;font-size:250px;top:-70px}
-html.cssanimations.intro-animating #intro .words .us{opacity:0;-webkit-animation:us 30s 1 linear forwards;-webkit-transform:rotate(2deg);margin-top:-500px;font-size:90px;font-size:180px;}
-html.cssanimations.intro-animating #intro .words .us .and{font-size:700px}
-html.cssanimations.intro-animating #intro .words .us .present{display:block;font-size:120px}
+html.cssanimations.intro-animating #intro .words .us{opacity:0;-webkit-animation:us 30s 1 linear forwards;-webkit-transform:rotate(2deg);margin-top:-300px;font-size:90px;font-size:160px;}
+html.cssanimations.intro-animating #intro .words .us .toolmantim,html.cssanimations.intro-animating #intro .words .us .and,html.cssanimations.intro-animating #intro .words .us .waferbaby{display:block}
+html.cssanimations.intro-animating #intro .words .us .toolmantim{font-size:140px}
+html.cssanimations.intro-animating #intro .words .us .and{margin-top:-160px;margin-bottom:-30px;font-size:500px}
+html.cssanimations.intro-animating #intro .words .us .waferbaby{margin-bottom:-10px}
+html.cssanimations.intro-animating #intro .words .us .present{display:block;font-size:110px}
 html.cssanimations.intro-animating #intro .words .title{top:35%;opacity:0;-webkit-animation:title 30s 1 linear forwards;font:220px "KILLERELEPHANT","Helvetica Neue",helvetica,sans-serif;}
 html.cssanimations.intro-animating #intro .words .title .a{letter-spacing:10px}
 html.cssanimations.intro-animating #intro .words .title .l{letter-spacing:-30px}
