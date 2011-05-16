@@ -44,10 +44,18 @@ Rubpocalypse.Views.Form = Backbone.View.extend({
     this.startTransmission(formData);
   },
   startTransmission: function(data) {
-    var steps = 100,
-        // Function to wait for AJAX and all steps
-        finishTransmission = _.after(1 + steps, this.transmissionComplete);
-    this.sendData(data, finishTransmission);
+    var number, // will get from AJAX request
+        steps = 100;
+        
+    var finishTransmission = _.after(1 + steps, _.bind(function() {
+        this.transmissionComplete(number);
+      }, this));
+
+    this.sendData(data, _.bind(function(numberFromServer) {
+      number = numberFromServer;
+      finishTransmission();
+    }, this));
+
     this.startPercentageCounter(steps, finishTransmission);
   },
   startPercentageCounter: function(steps, callback) {
@@ -67,7 +75,9 @@ Rubpocalypse.Views.Form = Backbone.View.extend({
       type: this.$("form").attr("method"),
       data: data,
       context: this,
-      statusCode: {200: callback}
+      statusCode: {
+        200: function(data) { callback(data.number); }
+      }
     });
   },
   formData: function() {
@@ -76,10 +86,10 @@ Rubpocalypse.Views.Form = Backbone.View.extend({
   setStatus: function(status) {
     this.$("header .status").text(status);
   },
-  transmissionComplete: function() {
+  transmissionComplete: function(number) {
     Rubpocalypse.Utils.delayedForSuspense(_.bind(function() {
       $(this.el).removeClass("visible");
-      this.trigger("complete");
+      this.trigger("complete", number);
     }, this));
   }
 });

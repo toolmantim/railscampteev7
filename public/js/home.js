@@ -1,7 +1,7 @@
 $(function() {
   new Rubpocalypse.Views.Order({el:$("#order")});
 
-  // engageAutoFillRobot();
+  engageAutoFillRobot();
 
   function engageAutoFillRobot() {
     setTimeout(function() {

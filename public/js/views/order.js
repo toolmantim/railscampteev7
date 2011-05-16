@@ -10,8 +10,8 @@ Rubpocalypse.Views.Order = Backbone.View.extend({
       setTimeout(function() { formView.show(password); }, 700);
     });
     
-    formView.bind("complete", function() {
-      setTimeout(function() { confirmationView.show(); }, 500);
+    formView.bind("complete", function(number) {
+      setTimeout(function() { confirmationView.show(number); }, 500);
     });
   }
 });
