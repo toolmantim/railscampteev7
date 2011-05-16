@@ -36,4 +36,26 @@ gradient) but it hosed every single browser.
 Muchos gracias to @waferbaby for being awesome, and helping out with the
 tee illustration!
 
-Everything in the entire site is MIT licensed (see http://github.com/toolmantim/railscamptee-v7/LICENSE), do what you like with it, except for the content in /fonts whose contains is copyright MyFonts.
+Everything in the entire site is MIT licensed, do what you like with it,
+except for the content in /fonts whose contains is copyright MyFonts. See the
+full license at http://github.com/toolmantim/railscamptee-v7/LICENSE.
+
+## Install instructions
+
+If you want to get it up and running on your machine, firsly make sure you
+have Ruby 1.8 or 1.9. After that:
+
+$ gem install bundler
+$ git clone https://github.com/toolmantim/railscampteev7
+$ cd railscampteev7
+$ bundle install
+$ rake
+
+If you want to compile the CSS you'll need Node.js and Stylus:
+
+$ rake styles
+
+and if you want to use LiveReload so you can see style changes being applied
+live in the browser:
+
+$ rake livereload
