@@ -27,12 +27,14 @@ helpers do
     content_type 'application/json'
     obj.to_json
   end
+  def asset_path(asset)
+    asset + "?" + settings.asset_cache_token
+  end
   def javascripts
     %w(
       /vendor/jquery.js
       /vendor/underscore.js
       /vendor/backbone.js
-      /vendor/audio.js
       /js/rubpocalypse.js
       /js/sounds.js
       /js/views/form.js
@@ -40,7 +42,7 @@ helpers do
       /js/views/confirmation.js
       /js/views/order.js
       /js/home.js
-    ).map {|p| p + "?" + settings.asset_cache_token}
+    ).map {|p| asset_path(p) }
   end
 end
 

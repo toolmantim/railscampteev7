@@ -2,9 +2,9 @@
 %html(lang="en-au")
   %head
     %meta(charset="utf-8")
-    %link(rel="stylesheet" href="/home.css")
+    %link{:rel => "stylesheet", :href => asset_path("/home.css")}
     %title RUBPOCALYPSE
-    %script(src="/vendor/modernizer.js")
+    %script{:src => asset_path("/vendor/modernizer.js")}
     %script== yepnope(#{javascripts.to_json});
     %script(src="http://use.typekit.com/wfr5ecw.js")
     %script try { Typekit.load(); } catch(e){ }
