@@ -1,18 +1,17 @@
 !!!
-/
-  :plain
-    #{readme_sans_install}
 %html.intro-animating(lang="en-au")
   %head
     %meta(charset="utf-8")
     %link{:rel => "stylesheet", :href => asset_path("/home.css")}
-    %title RUBPOCALYPSE
     %script{:src => asset_path("/vendor/modernizer.js")}
     %script== yepnope(#{javascripts.to_json});
     %script(src="http://use.typekit.com/wfr5ecw.js")
     %script try { Typekit.load(); } catch(e){ }
-    %link(rel="author" title="Tim Lucas" href="http://toolmantim.com/")
     %meta(name="viewport" content="width=1024, initial-scale=1.0, minimum-scale=1.0")
+    %title RUBPOCALYPSE
+    %link(rel="author" title="Tim Lucas" href="http://toolmantim.com/")
+    /
+      #{readme_sans_install}
   %body
     - [["crickets", true], ["fireball", false], ["explosion", false], ["success", false], ["error", false]].each do |(f,auto)|
       %audio{:preload => "auto", :id => "#{f}-sound", :autoplay => auto, :src => "/sounds/#{f}.mp3"}
