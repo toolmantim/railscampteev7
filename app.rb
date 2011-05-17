@@ -45,7 +45,7 @@ helpers do
       /js/views/gate.js
       /js/views/confirmation.js
       /js/views/order.js
-      /js/home.js
+      /js/app.js
     ).map {|p| asset_path(p) }
   end
   def readme_sans_install
@@ -54,7 +54,7 @@ helpers do
 end
 
 get "/" do
-  haml :home
+  haml :app
 end
 
 post "/authorise" do
