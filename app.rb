@@ -8,7 +8,7 @@ set :haml, :format => :html5
 
 use Sinatra::CacheAssets, :max_age => 86400*100 # 100 days
 
-set :asset_cache_token, ENV["COMMIT_HASH"] || Time.now.to_i.to_s
+set :asset_cache_token, ENV["COMMIT_HASH"]
 
 class Order < ActiveRecord::Base
   validates_presence_of :name, :email, :cut, :size
@@ -29,7 +29,10 @@ helpers do
     obj.to_json
   end
   def asset_path(asset)
-    asset + "?" + settings.asset_cache_token
+    asset + "?" + asset_cache_token(asset)
+  end
+  def asset_cache_token(asset)
+    settings.asset_cache_token || File.mtime(File.join(settings.public, asset)).to_i.to_s
   end
   def javascripts
     %w(
