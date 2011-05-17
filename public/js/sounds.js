@@ -6,10 +6,15 @@ Rubpocalypse.Sounds = (function() {
   
   return {
     play: function(name) {
-      if (Modernizr.audio) soundForName(name).play();
+      if (!Modernizr.audio) return
+      var sound = soundForName(name);
+      sound.pause()
+      sound.currentTime = 0;
+      sound.play();
     },
     pause: function(name) {
-      if (Modernizr.audio) soundForName(name).pause();
+      if (!Modernizr.audio) return;
+      soundForName(name).pause();
     }
   }
   
