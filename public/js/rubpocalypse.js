@@ -1,7 +1,6 @@
 Rubpocalypse = {};
 
 Rubpocalypse.Views = {};
-Rubpocalypse.Sounds = {};
 
 Rubpocalypse.Utils = {
   // For suspense we want to ensure some things take at least Pi/2 seconds to

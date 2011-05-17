@@ -1,9 +1,17 @@
-$(function() {
+Rubpocalypse.Sounds = (function() {
 
-  Rubpocalypse.Sounds = {};
+  var soundForName = function(name) {
+    return $("#" + name + "-sound").get(0);
+  };
+  
+  return {
+    play: function(name) {
+      if (Modernizr.audio) soundForName(name).play();
+    },
+    pause: function(name) {
+      if (Modernizr.audio) soundForName(name).pause();
+    }
+  }
+  
+})();
 
-  $("audio").each(function() {
-    Rubpocalypse.Sounds[$(this).attr("id").replace("-sound","")] = this;
-  });
-
-}());

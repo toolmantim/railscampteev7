@@ -46,16 +46,16 @@ Rubpocalypse.Views.Gate = Backbone.View.extend({
   unlock: function(password) {
     $(this.el).removeClass("verifying").addClass("success");
     this.setLabel("Authorised");
-    Rubpocalypse.Sounds.success.play();
+    Rubpocalypse.Sounds.play("success");
     setTimeout(_.bind(function() {
       $(this.el).addClass("unlocked");
       this.trigger("unlocked", password);
     }, this), 650);
   },
   incorrectPassword: function() {
-    $(this.el).removeClass("verifying").addClass("error")
+    $(this.el).removeClass("verifying").addClass("error");
     this.setLabel("Access denied");
-    Rubpocalypse.Sounds.error.play();
+    Rubpocalypse.Sounds.play("error");
     setTimeout(_.bind(function() {
       $(this.el).removeClass("error");
       this.$("input").removeAttr("disabled");

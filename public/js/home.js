@@ -4,11 +4,11 @@ $(function() {
   document.addEventListener("webkitAnimationStart", function(e) {
     switch (e.animationName) {
       case "comet": 
-        Rubpocalypse.Sounds.fireball.play();
-        setTimeout(function() { Rubpocalypse.Sounds.explosion.play(); }, 1100);
+        Rubpocalypse.Sounds.play("fireball");
+        setTimeout(function() { Rubpocalypse.Sounds.play("explosion"); }, 1100);
         break;
       case "fade-out-intro":
-        Rubpocalypse.Sounds.crickets.pause();
+        Rubpocalypse.Sounds.pause("crickets");
         break;
     }
   });
@@ -19,7 +19,7 @@ $(function() {
   }, false);
 
   function skipIntro() {
-    Rubpocalypse.Sounds.crickets.pause();
+    Rubpocalypse.Sounds.pause("crickets");
     $("html").removeClass("intro-animating");
   }
 

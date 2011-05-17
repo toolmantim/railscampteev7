@@ -35,10 +35,10 @@ Rubpocalypse.Views.Form = Backbone.View.extend({
   submitForm: function(e) {
     e.preventDefault();
     if (this.isComplete()) {
-      Rubpocalypse.Sounds.success.play();
+      Rubpocalypse.Sounds.play("success");
       this.transmit();
     } else {
-      Rubpocalypse.Sounds.error.play();
+      Rubpocalypse.Sounds.play("error");
     }
   },
   transmit: function() {
