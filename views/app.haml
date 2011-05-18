@@ -7,6 +7,15 @@
     %script== yepnope(#{javascripts.to_json});
     %script(src="http://use.typekit.com/wfr5ecw.js")
     %script try { Typekit.load(); } catch(e){ }
+    %script
+      :plain
+        // Give people the ability to skip intro as soon as possible,
+        // exported to window so other code can cause a skip
+        window.skipIntro = function() {
+          document.getElementById("crickets-sound").pause();
+          document.documentElement.className = document.documentElement.className.replace("intro-animating","")
+        }
+        document.addEventListener("click", skipIntro, false);
     %meta(name="viewport" content="width=1024, initial-scale=1.0, minimum-scale=1.0")
     %title RUBPOCALYPSE
     %link(rel="author" title="Tim Lucas" href="http://toolmantim.com/")
@@ -19,6 +28,7 @@
         %source{:src => "/sounds/#{f}.ogg"}/
     = partial :intro
     = partial :order
+    
     %script
       :plain
         var _gaq = _gaq || [];

@@ -18,12 +18,6 @@ $(function() {
       $("html").removeClass("intro-animating");
   }, false);
 
-  function skipIntro() {
-    Rubpocalypse.Sounds.pause("crickets");
-    $("html").removeClass("intro-animating");
-  }
-
-  $("html").click(function() { skipIntro(); });
 
   // Make everything in the intro clickable for lil ol Mobile Safari
   $("#intro, #intro *").each(function() {
@@ -47,7 +41,7 @@ $(function() {
   }
   
   if (window.location.search.match(/autofill/)) {
-    skipIntro();
+    window.skipIntro();
     engageAutoFillRobot();
   }
   
