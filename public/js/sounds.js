@@ -8,7 +8,6 @@ Rubpocalypse.Sounds = (function() {
     play: function(name) {
       if (!Modernizr.audio) return
       var sound = soundForName(name);
-      sound.pause()
       sound.currentTime = 0;
       sound.play();
     },
