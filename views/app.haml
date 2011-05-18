@@ -24,8 +24,8 @@
   %body
     - [["crickets", true], ["fireball", false], ["explosion", false], ["success", false], ["error", false]].each do |(f,auto)|
       %audio{:id => "#{f}-sound", :preload => "auto", "autoplay" => auto}
-        %source{:src => "/sounds/#{f}.mp3"}/
-        %source{:src => "/sounds/#{f}.ogg"}/
+        %source{:src => "/sounds/#{f}.mp3", :type => "audio/mp3"}/
+        %source{:src => "/sounds/#{f}.ogg", :type => "audio/ogg"}/
     = partial :intro
     = partial :order
     
