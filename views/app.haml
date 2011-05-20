@@ -3,6 +3,9 @@
   %head
     %meta(charset="utf-8")
     %link{:rel => "stylesheet", :href => asset_path("/home.css")}
+    %script{:src => asset_path("/vendor/modernizer.js")}
+    -# To stop rack-pagespeed trying to combine typekit into modernizr.
+    / .
     %script(src="http://use.typekit.com/wfr5ecw.js")
     %script try { Typekit.load(); } catch(e){ }
     %script
