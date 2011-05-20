@@ -3,10 +3,6 @@
   %head
     %meta(charset="utf-8")
     %link{:rel => "stylesheet", :href => asset_path("/home.css")}
-    - for js in javascripts
-      %script{:src => js}
-    - # Stop rack-pagespeed from combining in remote scripts
-    / .
     %script(src="http://use.typekit.com/wfr5ecw.js")
     %script try { Typekit.load(); } catch(e){ }
     %script
@@ -31,6 +27,9 @@
     = partial :intro
     = partial :order
     
+    - for js in javascripts
+      %script{:src => js}
+
     %script
       :plain
         var _gaq = _gaq || [];
