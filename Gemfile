@@ -6,6 +6,8 @@ gem 'json'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'sinatra-cache-assets'
+gem 'rack-pagespeed'
+gem 'dalli'
 
 group :development do
   gem 'thin'

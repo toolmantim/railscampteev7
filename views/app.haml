@@ -3,8 +3,10 @@
   %head
     %meta(charset="utf-8")
     %link{:rel => "stylesheet", :href => asset_path("/home.css")}
-    %script{:src => asset_path("/vendor/modernizer.js")}
-    %script== yepnope(#{javascripts.to_json});
+    - for js in javascripts
+      %script{:src => js}
+    - # Stop rack-pagespeed from combining in remote scripts
+    / .
     %script(src="http://use.typekit.com/wfr5ecw.js")
     %script try { Typekit.load(); } catch(e){ }
     %script

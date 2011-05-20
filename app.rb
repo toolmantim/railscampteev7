@@ -36,6 +36,7 @@ helpers do
   end
   def javascripts
     %w(
+      /vendor/modernizer.js
       /vendor/jquery.js
       /vendor/underscore.js
       /vendor/backbone.js
