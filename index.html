@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class='intro-animating' lang='en-au'>
+<head>
+<meta charset='utf-8'>
+<link href='home.css' rel='stylesheet'>
+<script src='vendor/modernizer.js'></script>
+<script src='http://use.typekit.com/wfr5ecw.js'></script>
+<script>try { Typekit.load(); } catch(e){ }</script>
+<script>
+// Give people the ability to skip intro as soon as possible,
+// exported to window so other code can cause a skip
+window.skipIntro = function() {
+  document.getElementById("crickets-sound").pause();
+  document.documentElement.className = document.documentElement.className.replace("intro-animating","")
+}
+document.addEventListener("click", skipIntro, false);
+</script>
+<meta content='width=1024, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+<title>RUBPOCALYPSE</title>
+<link href='http://toolmantim.com/' rel='author' title='Tim Lucas'>
+<!--
+______ _   _____________ _____ _____   ___   _   __   _______  _____ _____ 
+| ___ \ | | | ___ \ ___ \  _  /  __ \ / _ \ | |  \ \ / / ___ \/  ___|  ___|
+| |_/ / | | | |_/ / |_/ / | | | /  \// /_\ \| |   \ V /| |_/ /\ `--.| |__  
+|    /| | | | ___ \  __/| | | | |    |  _  || |    \ / |  __/  `--. \  __| 
+| |\ \| |_| | |_/ / |   \ \_/ / \__/\| | | || |____| | | |    /\__/ / |___ 
+\_| \_|\___/\____/\_|    \___/ \____/\_| |_/\_____/\_/ \_|    \____/\____/
+
+          ~ Lovingly designed & built for RC9 by @toolmantim ~
+
+The secret password for the live site: theskyisfalling
+
+This little site was built exclusively for the discerning internet user. It
+assumes you're using a modern browser such as Safari, Chrome, FF, Opera or IE9.
+
+If you want to pop the hood mosy over to:
+http://github.com/toolmantim/railscampteev7
+
+There you'll find some jQuery, Backbone, Modernizr, Sinatra, HAML, HTML5,
+Stylus, and plenty of CSS3.
+
+FF Din Rounded is the champion typeface (served via typekit), Strangelove
+features in the Pablo-Ferro-esque titles, and Killer Elephant gives the
+logo it's oomph. These all cost money, I used my own moola, so please
+don't steal them. That would be extremely lame. Same goes with the sounds.
+
+For the best experience across the widest range of browsers I've tried to
+stick with transitions for the main ordering interface, and used animations
+exclusively for the intro.
+
+The only images in the whole site are the tee graphics, and that damned
+sky. I did a purely CSS-gradient version of the sky (every star was a radial
+gradient) but it hosed every browser I tried it on.
+
+Muchos gracias to @waferbaby for being awesome, and helping out with the
+tee illustration!
+
+Everything in the entire site is MIT licensed, do what you like with it,
+except for the content in /fonts and public/sounds. See the full license at
+https://github.com/toolmantim/railscampteev7/blob/master/LICENSE.
+
+
+-->
+</head>
+<body>
+<audio autoplay id='crickets-sound' preload='auto'>
+<source src='sounds/crickets.mp3' type='audio/mp3'>
+<source src='sounds/crickets.ogg' type='audio/ogg'>
+</audio>
+<audio id='fireball-sound' preload='auto'>
+<source src='sounds/fireball.mp3' type='audio/mp3'>
+<source src='sounds/fireball.ogg' type='audio/ogg'>
+</audio>
+<audio id='explosion-sound' preload='auto'>
+<source src='sounds/explosion.mp3' type='audio/mp3'>
+<source src='sounds/explosion.ogg' type='audio/ogg'>
+</audio>
+<audio id='success-sound' preload='auto'>
+<source src='sounds/success.mp3' type='audio/mp3'>
+<source src='sounds/success.ogg' type='audio/ogg'>
+</audio>
+<audio id='error-sound' preload='auto'>
+<source src='sounds/error.mp3' type='audio/mp3'>
+<source src='sounds/error.ogg' type='audio/ogg'>
+</audio>
+<div id='intro'>
+<div class='stars-1'></div>
+<div class='stars-2'></div>
+<div class='stars-3'></div>
+<div class='stars-4'></div>
+<div class='ground'>
+<div class='dinos'></div>
+</div>
+<p class='words'>
+<span class='sponsor'><span class="support">With the support of</span> <span class="thoughtworks">thought<span class="works">works</span></span></span>
+<span class='us'><span class="toolmantim">toolmantim</span> <span class="and">and</span> <span class="waferbaby">waferbaby</span> <span class="present">proudly present</span></span>
+<span class='title'>RUBPOC<span class="a">A</span><span class="l">L</span>YPSE</span>
+</p>
+<div class='comet-outer'>
+<div class='comet'></div>
+</div>
+<div class='boom'></div>
+</div>
+
+<div id='order'>
+<header>
+<hgroup>
+<h1>Rubpocalypse</h1>
+<h2>The <a href="http://railscampteev5.toolmantim.com">sequel</a>, coming soon to all attendees of <a href="http://">Railscamp Byron 2011</a></h2>
+</hgroup>
+</header>
+<div class='airlock'>
+<section class='gate'>
+<form action='/authorise' method='post' onsubmit='return false'>
+<div class='wheel-outer'></div>
+<div class='wheel-inner'></div>
+<h2>Unlock</h2>
+<label for='password'>Passphrase</label>
+<input autocomplete='off' id='password' maxlength='20' name='password' title='password' type='text'>
+</form>
+<div class='top-door'></div>
+<div class='bottom-door'></div>
+</section>
+
+<section class='form'>
+<form action='/order' method='post'>
+<header>
+<h1>
+Order module REV 138d5
+<span class='status'>Idle</span>
+</h1>
+</header>
+<fieldset class='cut'>
+<h2>Cut</h2>
+<label>
+<input name='cut' type='radio' value='f'>
+<span>Female</span>
+</label>
+<label>
+<input name='cut' type='radio' value='m'>
+<span>Male</span>
+</label>
+</fieldset>
+<fieldset class='size'>
+<h2>Size</h2>
+<label>
+<input name='size' type='radio' value='xs'>
+<span>XS</span>
+</label>
+<label>
+<input name='size' type='radio' value='s'>
+<span>S</span>
+</label>
+<label>
+<input name='size' type='radio' value='m'>
+<span>M</span>
+</label>
+<label>
+<input name='size' type='radio' value='l'>
+<span>L</span>
+</label>
+<label>
+<input name='size' type='radio' value='xl'>
+<span>XL</span>
+</label>
+<label>
+<input name='size' type='radio' value='2xl'>
+<span>2XL</span>
+</label>
+</fieldset>
+<fieldset class='personal'>
+<h2>Name &amp; Email</h2>
+<label>
+<input name='name' placeholder='NAME' title='Name' type='text'>
+</label>
+<label>
+<input name='email' placeholder='EMAIL' title='Email' type='text'>
+</label>
+</fieldset>
+<fieldset class='submit'>
+<input type='submit' value='Transmit'>
+</fieldset>
+</form>
+</section>
+
+<section class='confirmation'>
+<hgroup>
+<h1>Congratulations human</h1>
+<h2>You’ve secured tee #<span class="number">42</span></h2>
+</hgroup>
+<p>Please proceed to docking station RC9<br/> for uniform acquisition</p>
+<div class='tee-1'></div>
+<div class='tee-2'></div>
+</section>
+
+</div>
+<footer>
+<section>
+<h1>Illustration</h1>
+<p><a href="http://twitter.com/waferbaby">@waferbaby</a></p>
+</section>
+<section>
+<h1>Sponsorship</h1>
+<p><a href="http://thoughtworks.com/">thoughtworks</a></p>
+</section>
+<section>
+<h1>Design &amp; build</h1>
+<p><a href="http://twitter.com/toolmantim">@toolmantim</a></p>
+</section>
+</footer>
+</div>
+
+<script src='vendor/jquery.js'></script>
+<script src='vendor/underscore.js'></script>
+<script src='vendor/backbone.js'></script>
+<script src='js/rubpocalypse.js'></script>
+<script src='js/sounds.js'></script>
+<script src='js/views/form.js'></script>
+<script src='js/views/gate.js'></script>
+<script src='js/views/confirmation.js'></script>
+<script src='js/views/order.js'></script>
+<script src='js/app.js'></script>
+</body>
+</html>
