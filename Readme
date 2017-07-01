@@ -1,8 +1,8 @@
-______ _   _____________ _____ _____   ___   _   __   _______  _____ _____ 
+______ _   _____________ _____ _____   ___   _   __   _______  _____ _____
 | ___ \ | | | ___ \ ___ \  _  /  __ \ / _ \ | |  \ \ / / ___ \/  ___|  ___|
-| |_/ / | | | |_/ / |_/ / | | | /  \// /_\ \| |   \ V /| |_/ /\ `--.| |__  
-|    /| | | | ___ \  __/| | | | |    |  _  || |    \ / |  __/  `--. \  __| 
-| |\ \| |_| | |_/ / |   \ \_/ / \__/\| | | || |____| | | |    /\__/ / |___ 
+| |_/ / | | | |_/ / |_/ / | | | /  \// /_\ \| |   \ V /| |_/ /\ `--.| |__
+|    /| | | | ___ \  __/| | | | |    |  _  || |    \ / |  __/  `--. \  __|
+| |\ \| |_| | |_/ / |   \ \_/ / \__/\| | | || |____| | | |    /\__/ / |___
 \_| \_|\___/\____/\_|    \___/ \____/\_| |_/\_____/\_/ \_|    \____/\____/
 
           ~ Lovingly designed & built for RC9 by @toolmantim ~
@@ -37,23 +37,3 @@ tee illustration!
 Everything in the entire site is MIT licensed, do what you like with it,
 except for the content in /fonts and public/sounds. See the full license at
 https://github.com/toolmantim/railscampteev7/blob/master/LICENSE.
-
-## Install instructions
-
-If you want to get it up and running on your machine, firsly make sure you
-have Ruby 1.8 or 1.9, and then:
-
-$ gem install bundler
-$ git clone https://github.com/toolmantim/railscampteev7
-$ cd railscampteev7
-$ bundle install
-$ rake
-
-If you want to compile the CSS you'll need Node.js and Stylus:
-
-$ rake styles
-
-and if you want to use LiveReload so you can see style changes being applied
-live in the browser:
-
-$ rake livereload
