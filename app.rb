@@ -1,17 +1,15 @@
 require "sinatra"
 require "haml"
 require "json"
-require "sinatra/cache_assets"
 
 set :haml, :format => :html5
-
-use Sinatra::CacheAssets, :max_age => 86400*100 # 100 days
-
-set :asset_cache_token, ENV["COMMIT_HASH"]
 
 helpers do
   def partial(name)
     haml :"_#{name}", :layout => false
+  end
+  def readme_sans_install
+    File.read(File.join(settings.root, "Readme")).split("## Install instructions")[0]
   end
   def verify_password!
     halt([401, "WHO YOU HACKIN FOOL?!"]) if
@@ -20,29 +18,6 @@ helpers do
   def json(obj)
     content_type 'application/json'
     obj.to_json
-  end
-  def asset_path(asset)
-    asset + "?" + asset_cache_token(asset)
-  end
-  def asset_cache_token(asset)
-    settings.asset_cache_token || File.mtime(File.join(settings.public_folder, asset)).to_i.to_s
-  end
-  def javascripts
-    %w(
-      /vendor/jquery.js
-      /vendor/underscore.js
-      /vendor/backbone.js
-      /js/rubpocalypse.js
-      /js/sounds.js
-      /js/views/form.js
-      /js/views/gate.js
-      /js/views/confirmation.js
-      /js/views/order.js
-      /js/app.js
-    ).map {|p| asset_path(p) }
-  end
-  def readme_sans_install
-    File.read(File.join(settings.root, "Readme")).split("## Install instructions")[0]
   end
 end
 

@@ -2,8 +2,8 @@
 %html.intro-animating(lang="en-au")
   %head
     %meta(charset="utf-8")
-    %link{:rel => "stylesheet", :href => asset_path("/home.css")}
-    %script{:src => asset_path("/vendor/modernizer.js")}
+    %link{:rel => "stylesheet", :href => "home.css"}
+    %script{:src => "vendor/modernizer.js"}
     %script(src="http://use.typekit.com/wfr5ecw.js")
     %script try { Typekit.load(); } catch(e){ }
     %script
@@ -23,10 +23,19 @@
   %body
     - [["crickets", true], ["fireball", false], ["explosion", false], ["success", false], ["error", false]].each do |(f,auto)|
       %audio{:id => "#{f}-sound", :preload => "auto", "autoplay" => auto}
-        %source{:src => "/sounds/#{f}.mp3", :type => "audio/mp3"}/
-        %source{:src => "/sounds/#{f}.ogg", :type => "audio/ogg"}/
+        %source{:src => "sounds/#{f}.mp3", :type => "audio/mp3"}/
+        %source{:src => "sounds/#{f}.ogg", :type => "audio/ogg"}/
+
     = partial :intro
     = partial :order
 
-    - for js in javascripts
-      %script{:src => js}
+    %script{:src => "vendor/jquery.js"}
+    %script{:src => "vendor/underscore.js"}
+    %script{:src => "vendor/backbone.js"}
+    %script{:src => "js/rubpocalypse.js"}
+    %script{:src => "js/sounds.js"}
+    %script{:src => "js/views/form.js"}
+    %script{:src => "js/views/gate.js"}
+    %script{:src => "js/views/confirmation.js"}
+    %script{:src => "js/views/order.js"}
+    %script{:src => "js/app.js"}

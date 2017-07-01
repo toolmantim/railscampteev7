@@ -24,16 +24,21 @@ Rubpocalypse.Views.Gate = Backbone.View.extend({
     this.showPasswordLabel();
     this.verifyingPassword();
     Rubpocalypse.Utils.delayedForSuspense(_.bind(function() {
-      $.ajax({
-        url: this.$("form").attr("action"),
-        type: this.$("form").attr("method"),
-        data: {password:password},
-        context: this,
-        statusCode: {
-          200: function() { this.unlock(password); },
-          401: function() { this.incorrectPassword(); }
-        }
-      });
+      // $.ajax({
+      //   url: this.$("form").attr("action"),
+      //   type: this.$("form").attr("method"),
+      //   data: {password:password},
+      //   context: this,
+      //   statusCode: {
+      //     200: function() { this.unlock(password); },
+      //     401: function() { this.incorrectPassword(); }
+      //   }
+      // });
+      if (password === "secret") {
+        this.unlock(password);
+      } else {
+        this.incorrectPassword();
+      }
     }, this));
   },
   password: function() {
