@@ -1,9 +1,9 @@
 $(function() {
   new Rubpocalypse.Views.Order({el:$("#order")});
 
-  document.addEventListener("webkitAnimationStart", function(e) {
+  document.addEventListener("animationstart", function(e) {
     switch (e.animationName) {
-      case "comet": 
+      case "comet":
         Rubpocalypse.Sounds.play("fireball");
         setTimeout(function() { Rubpocalypse.Sounds.play("explosion"); }, 1100);
         break;
@@ -13,7 +13,7 @@ $(function() {
     }
   });
 
-  document.addEventListener("webkitAnimationEnd", function(e) {
+  document.addEventListener("animationend", function(e) {
     if (e.animationName == "fade-out-intro")
       $("html").removeClass("intro-animating");
   }, false);
@@ -39,10 +39,10 @@ $(function() {
       f.submit();
     }, 4000);
   }
-  
+
   if (window.location.search.match(/autofill/)) {
     window.skipIntro();
     engageAutoFillRobot();
   }
-  
+
 });

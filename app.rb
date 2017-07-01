@@ -1,7 +1,6 @@
 require "sinatra"
 require "haml"
 require "json"
-require "sinatra/activerecord"
 require "sinatra/cache_assets"
 
 set :haml, :format => :html5
@@ -9,12 +8,6 @@ set :haml, :format => :html5
 use Sinatra::CacheAssets, :max_age => 86400*100 # 100 days
 
 set :asset_cache_token, ENV["COMMIT_HASH"]
-
-class Order < ActiveRecord::Base
-  validates_presence_of :name, :email, :cut, :size
-  validates_inclusion_of :cut, :in => %w( m f )
-  validates_inclusion_of :size, :in => %w( xs s m l xl 2xl )
-end
 
 helpers do
   def partial(name)
@@ -32,7 +25,7 @@ helpers do
     asset + "?" + asset_cache_token(asset)
   end
   def asset_cache_token(asset)
-    settings.asset_cache_token || File.mtime(File.join(settings.public, asset)).to_i.to_s
+    settings.asset_cache_token || File.mtime(File.join(settings.public_folder, asset)).to_i.to_s
   end
   def javascripts
     %w(
@@ -64,5 +57,5 @@ end
 
 post "/order" do
   verify_password!
-  json :number => Order.create!(params).id
+  json :number => 42
 end
