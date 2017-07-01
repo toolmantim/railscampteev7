@@ -34,7 +34,7 @@ Rubpocalypse.Views.Gate = Backbone.View.extend({
       //     401: function() { this.incorrectPassword(); }
       //   }
       // });
-      if (password === "secret") {
+      if (password === "theskyisfalling") {
         this.unlock(password);
       } else {
         this.incorrectPassword();
